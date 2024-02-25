@@ -515,19 +515,20 @@ footer p {
   overflow: hidden;
 }
 .circle.per-70 {
-  background-image: conic-gradient(#ffb58e 30%, #ab6e7a 0);
+  background-image: conic-gradient(#FFCDB2 30%, #ab6e7a 0);
 }
 .circle.per-75 {
-  background-image: conic-gradient(#ffb58e 25%, #ab6e7a 0);
+  background-image: conic-gradient(#FFCDB2 25%, #  background-image: conic-gradient(#FFCDB2 30%, #ab6e7a 0);
+ 0);
 }
 .circle.per-80 {
-  background-image: conic-gradient(#ffb58e 20%, #B5838D 0);
+  background-image: conic-gradient(#FFCDB2 20%, #B5838D 0);
 }
 .circle.per-85 {
-  background-image: conic-gradient(#ffb58e 15%, #B5838D 0);
+  background-image: conic-gradient(#FFCDB2 15%, #B5838D 0);
 }
 .circle.per-90 {
-  background-image: conic-gradient(#ffb58e 10%, #B5838D 0);
+  background-image: conic-gradient(#FFCDB2 10%, #B5838D 0);
 }
 .circle .inner {
   display: flex;
