@@ -470,6 +470,13 @@ article .icon {
   height: 2.5rem;
 }
 
+  
+  /*change the number below to scale to the appropriate size*/ 
+  .thumbnail:hover { 
+  transform: scale(3); 
+  
+  }
+
 /* FOOTER SECTION */
 
 footer {
@@ -479,4 +486,62 @@ footer {
 
 footer p {
   text-align: center;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Lato:300");
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+
+/*** <--- CIRCLE STYLES ---> ***/
+.wrap-circles {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.circle {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0.5rem;
+  border-radius: 50%;
+  background: #FFCDB2;
+  overflow: hidden;
+}
+.circle.per-70 {
+  background-image: conic-gradient(#ffb58e 30%, #ab6e7a 0);
+}
+.circle.per-75 {
+  background-image: conic-gradient(#ffb58e 25%, #ab6e7a 0);
+}
+.circle.per-80 {
+  background-image: conic-gradient(#ffb58e 20%, #B5838D 0);
+}
+.circle.per-85 {
+  background-image: conic-gradient(#ffb58e 15%, #B5838D 0);
+}
+.circle.per-90 {
+  background-image: conic-gradient(#ffb58e 10%, #B5838D 0);
+}
+.circle .inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 55px;
+  height: 55px;
+  background: #000;
+  border-radius: 50%;
+  font-size: 1.35em;
+  font-weight: 100;
+  color: rgba(255, 255, 255, 0.75);
 }

@@ -4,6 +4,7 @@ function toggleMenu() {
   menu.classList.toggle("open");
   icon.classList.toggle("open");
 }
+//Slider 
 
 // Dark / light mode
 
