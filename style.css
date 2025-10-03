@@ -470,12 +470,12 @@ article .icon {
   height: 2.5rem;
 }
 
-  
-  /*change the number below to scale to the appropriate size*/ 
-  .thumbnail:hover { 
-  transform: scale(3); 
-  
-  }
+
+/*change the number below to scale to the appropriate size*/
+.thumbnail:hover {
+  transform: scale(3);
+
+}
 
 /* FOOTER SECTION */
 
@@ -488,12 +488,17 @@ footer p {
   text-align: center;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 @import url("https://fonts.googleapis.com/css?family=Lato:300");
-*, *::before, *::after {
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -514,21 +519,27 @@ footer p {
   background: #FFCDB2;
   overflow: hidden;
 }
+
 .circle.per-70 {
   background-image: conic-gradient(#FFCDB2 30%, #ab6e7a 0);
 }
+
 .circle.per-75 {
   background-image: conic-gradient(#FFCDB2 25%, #ab6e7a 0);
 }
+
 .circle.per-80 {
   background-image: conic-gradient(#FFCDB2 20%, #B5838D 0);
 }
+
 .circle.per-85 {
   background-image: conic-gradient(#FFCDB2 15%, #B5838D 0);
 }
+
 .circle.per-90 {
   background-image: conic-gradient(#FFCDB2 10%, #B5838D 0);
 }
+
 .circle .inner {
   display: flex;
   justify-content: center;
@@ -544,4 +555,55 @@ footer p {
   font-size: 1.35em;
   font-weight: 100;
   color: rgba(255, 255, 255, 0.75);
+}
+
+/* === SPC card (home page) === */
+.spc-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  padding: 16px;
+  border-radius: 16px;
+  background: #151826;
+  border: 1px solid #262a3a;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.spc-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+}
+
+.spc-card .spc-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.spc-card .spc-logo {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: #7aa4ff;
+  color: #0a0c14;
+  font-weight: 800;
+}
+
+.spc-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.spc-badge {
+  display: inline-flex;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #182034;
+  border: 1px solid #262a3a;
+  font-size: 12px;
+  color: #cfdbff;
 }

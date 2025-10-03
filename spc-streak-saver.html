@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPC “Streak Saver” — Case Study</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+    <style>
+        /* --- SPC page scoped styles (won't clash) --- */
+        :root {
+            --spc-bg: #0b0c10;
+            --spc-panel: #111319;
+            --spc-ink: #e6e8ee;
+            --spc-muted: #aab0c0;
+            --spc-brand: #6be675;
+            --spc-border: #262a3a;
+            --spc-card: #151826;
+            --spc-accent: #7aa4ff;
+        }
+
+        body.spc-body {
+            background: var(--spc-bg);
+            color: var(--spc-ink);
+        }
+
+        .spc-wrap {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        .spc-eyebrow {
+            color: var(--spc-muted);
+            text-transform: uppercase;
+            letter-spacing: .12em;
+            font-size: 12px;
+        }
+
+        .spc-hero h1 {
+            font-size: clamp(28px, 4.2vw, 44px);
+            margin: 6px 0 10px;
+        }
+
+        .spc-subtitle {
+            color: var(--spc-muted);
+            max-width: 70ch;
+        }
+
+        .spc-hero-ctas {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .spc-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 14px;
+            border-radius: 12px;
+            border: 1px solid var(--spc-border);
+            text-decoration: none;
+            color: var(--spc-ink);
+            background: #161a27;
+        }
+
+        .spc-btn.primary {
+            background: linear-gradient(180deg, var(--spc-brand), #3ecc50);
+            color: #0a3410;
+            font-weight: 700;
+        }
+
+        .spc-panel {
+            background: var(--spc-panel);
+            border: 1px solid var(--spc-border);
+            border-radius: 16px;
+            padding: 18px;
+            margin: 22px 0;
+        }
+
+        .spc-grid-2 {
+            display: grid;
+            gap: 16px;
+            grid-template-columns: 1fr;
+        }
+
+        @media (min-width:760px) {
+            .spc-grid-2 {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .spc-box {
+            background: var(--spc-card);
+            border: 1px solid var(--spc-border);
+            padding: 14px;
+            border-radius: 14px;
+        }
+
+        .spc-code {
+            background: #0b0d14;
+            color: #cfe3ff;
+            padding: 12px;
+            border-radius: 12px;
+            border: 1px solid var(--spc-border);
+            overflow-x: auto;
+        }
+
+        .spc-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .spc-badge {
+            display: inline-flex;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: #182034;
+            border: 1px solid var(--spc-border);
+            font-size: 12px;
+            color: #cfdbff;
+        }
+
+        .spc-list {
+            margin: 8px 0 0 18px;
+        }
+
+        .spc-list li {
+            margin: 6px 0;
+        }
+
+        .spc-hero-metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin: 18px 0;
+        }
+
+        .spc-metric {
+            background: var(--spc-card);
+            border: 1px solid var(--spc-border);
+            padding: 14px;
+            border-radius: 14px;
+            text-align: center;
+        }
+
+        .spc-metric .v {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .spc-metric .l {
+            color: var(--spc-muted);
+            font-size: 12px;
+        }
+
+        .spc-quote {
+            margin: 14px 0;
+            padding-left: 14px;
+            border-left: 3px solid var(--spc-accent);
+            color: #d7e2ff;
+        }
+    </style>
+</head>
+
+<body class="spc-body">
+    <main class="spc-wrap">
+        <header class="spc-hero">
+            <div class="spc-eyebrow">Case Study</div>
+            <h1>SPC “Streak Saver” — tiny build, real lift</h1>
+            <p class="spc-subtitle">
+                A lightweight feature that rewards students for maintaining a savings streak
+                (redeem at least once per day/week). It nudges positive behavior and lifts
+                offer engagement—aligned to SPC’s mission: Spend. Save. Repeat.
+            </p>
+            <div class="spc-hero-metrics" role="group" aria-label="Target impact metrics">
+                <div class="spc-metric">
+                    <div class="v">+20–30%</div>
+                    <div class="l">Offer views lift</div>
+                </div>
+                <div class="spc-metric">
+                    <div class="v">≥25%</div>
+                    <div class="l">Weekly streak completion</div>
+                </div>
+        </header>
+
+        <section class="spc-panel">
+            <h2>Context & Goals</h2>
+            <ul class="spc-list">
+                <li><strong>Audience:</strong> Canadian students using SPC for daily savings.</li>
+                <li><strong>Goal:</strong> Turn the slogan into a habit loop to improve recurring redemptions.</li>
+                <li><strong>Scope:</strong> 1-week spike showing end-to-end ownership (UI, API, QA, analytics, CI).</li>
+            </ul>
+            <div class="spc-badges">
+                <span class="spc-badge">Student-first</span>
+                <span class="spc-badge">Fast iteration</span>
+                <span class="spc-badge">Feature-flagged</span>
+                <span class="spc-badge">Partner-friendly</span>
+            </div>
+        </section>
+
+        <section class="spc-panel">
+            <h2>Solution Overview</h2>
+            <p>
+                Add a <strong>StreakCard</strong> on Home with progress + next reward. Redeeming an offer advances the
+                streak; milestone rewards trigger.
+                Events are tracked and A/B-testable (3-of-5 vs 7-day).
+            </p>
+            <div class="spc-grid-2">
+                <div class="spc-box">
+                    <h3>Feature Slice</h3>
+                    <ul class="spc-list">
+                        <li>StreakCard (home widget) with progress + reward preview</li>
+                        <li>Offer list/detail → redeem flow</li>
+                        <li>Rewards modal (milestones, confetti)</li>
+                        <li>Analytics hooks + variant flags</li>
+                    </ul>
+                </div>
+                <div class="spc-box">
+                    <h3>Tech</h3>
+                    <ul class="spc-list">
+                        <li>React Native (Expo), React Query, AsyncStorage</li>
+                        <li>Flask REST API (SQLite for spike), JWT stub</li>
+                        <li>GitHub Actions (lint/tests), env-based flags</li>
+                        <li>Amplitude/GA4 ready; CSV fallback logging</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="spc-panel">
+            <h2>Architecture (minimal, scalable)</h2>
+            <div class="spc-grid-2">
+                <div class="spc-box">
+                    <h3>Data Model</h3>
+                    <pre class="spc-code">users(id, created_at)
+offers(id, partner_id, title, terms, points_value, geofence_json)
+redemptions(id, user_id, offer_id, ts)
+streaks(user_id, current_count, last_redeem_ts, best_count)</pre>
+                </div>
+                <div class="spc-box">
+                    <h3>API Endpoints</h3>
+                    <pre class="spc-code">GET  /offers
+GET  /streak
+POST /redeem  // advances streak; validates offer; emits events</pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="spc-panel">
+            <h2>Success Metrics</h2>
+            <ul class="spc-list">
+                <li><strong>Activation:</strong> ≥60% of first-time viewers tap “Start my streak”.</li>
+                <li><strong>Engagement:</strong> +20–30% lift in offer detail views (streak vs control).</li>
+                <li><strong>Completion:</strong> ≥25% weekly streak completion.</li>
+                <li><strong>Qualitative:</strong> Micro-survey “felt motivated to save” ≥4/5.</li>
+            </ul>
+        </section>
+
+        <section class="spc-panel">
+            <h2>QA & Accessibility</h2>
+            <ul class="spc-list">
+                <li>Unit tests (UI + API) for happy/sad paths; double-redeem same day; offline cache.</li>
+                <li>Accessibility: labeled controls, focus order, ≥AA contrast, touch targets ≥44px.</li>
+                <li>Performance: Home render &lt;500ms; list virtualization; API p95 &lt;250ms on dev infra.</li>
+            </ul>
+        </section>
+
+        <section class="spc-panel">
+            <h2>1-Week Timeline</h2>
+            <ol class="spc-list">
+                <li><strong>Day 1:</strong> KPIs, wires, repo + CI scaffold, event map.</li>
+                <li><strong>Day 2:</strong> Flask endpoints + seed data + auth stub.</li>
+                <li><strong>Day 3:</strong> RN components (StreakCard, Offer screens).</li>
+                <li><strong>Day 4:</strong> Tests + analytics hooks + A/B flag.</li>
+                <li><strong>Day 5:</strong> Edge cases, polish, demo recording.</li>
+            </ol>
+        </section>
+
+
+        <section id="repo" class="spc-panel">
+            <h2>Repository <span class="spc-badge">Tests</span> <span class="spc-badge">CI/CD</span> <span
+                    class="spc-badge">Feature Flags</span></h2>
+            <p>Monorepo with <code>app/</code> (React Native) and <code>api/</code> (Flask).</p>
+            <pre class="spc-code">spc-streak-saver/
+  app/            # React Native (Expo)
+    src/
+      components/
+      screens/
+      lib/
+  api/            # Flask REST API
+    app.py
+    models.py
+    routes/
+  README.md
+</pre>
+            <div class="spc-hero-ctas">
+                <a class="spc-btn" href="https://github.com/Niraj058/Portfolio" onclick="return false;">View repo</a>
+            </div>
+        </section>
+
+        <section class="spc-panel">
+            <h2>Why it fits SPC</h2>
+            <p>Small slice, measurable outcomes, student-first value—easy to pilot behind a feature flag.</p>
+            <blockquote class="spc-quote">
+                “Students don’t need more noise; they need momentum. Streaks create momentum—and momentum creates
+                savings.”
+            </blockquote>
+            <div class="spc-hero-ctas">
+                <a class="spc-btn primary" href="mailto:shahnniraj.2025@gmail.com">Discuss a pilot</a>
+                <a class="spc-btn" href="index.html">Back to portfolio</a>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
