@@ -5,12 +5,13 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Protfolio Niraj Shah</title>
+  <title>Portfolio — Niraj Shah</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="mediaqueries.css" />
 </head>
 
 <body>
+  <!-- Desktop Nav -->
   <nav id="desktop-nav">
     <div class="logo">Niraj Shah</div>
     <div>
@@ -21,18 +22,18 @@
         <li><a href="#contact">Contact</a></li>
         <li>
           <img id="modeToggle" class="icon color-icon" src="./assets/theme_dark.png" src-light="./assets/theme_dark.png"
-            src-dark="./assets/theme_light.png" alt="Theme icon" />
+            src-dark="./assets/theme_light.png" alt="Toggle theme" />
         </li>
       </ul>
     </div>
   </nav>
+
+  <!-- Mobile/Hamburger Nav -->
   <nav id="hamburger-nav">
     <div class="logo">Niraj Shah</div>
     <div class="hamburger-menu">
       <div class="hamburger-icon" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </div>
       <div class="menu-links">
         <li><a href="#about" onclick="toggleMenu()">About</a></li>
@@ -41,11 +42,13 @@
         <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
         <li>
           <img id="modeToggle2" class="icon color-icon" src="./assets/theme_dark.png"
-            src-light="./assets/theme_dark.png" src-dark="./assets/theme_light.png" alt="Color them icon" />
+            src-light="./assets/theme_dark.png" src-dark="./assets/theme_light.png" alt="Toggle theme" />
         </li>
       </div>
     </div>
   </nav>
+
+  <!-- Hero/Profile -->
   <section id="profile">
     <div class="section__pic-container">
       <img src="./assets/profile-pic.png" alt="Niraj Shah profile picture" />
@@ -55,22 +58,21 @@
       <h1 class="title">Niraj Shah</h1>
       <p class="section__text__p2">Software Developer</p>
       <div class="btn-container">
-        <button class="btn btn-color-2" onclick="window.open('./assets/resume-example.pdf')">
-          Download CV
-        </button>
-        <button class="btn btn-color-1" onclick="location.href='./#contact'">
-          Contact Info
-        </button>
+        <button class="btn btn-color-2" onclick="window.open('./assets/resume-example.pdf')">Download CV</button>
+        <button class="btn btn-color-1" onclick="location.href='./#contact'">Contact Info</button>
       </div>
       <div id="socials-container">
-        <img /src="./assets/linkedin_light.png" src-light="./assets/linkedin_light.png"
-          src-dark="./assets/linkedin_dark.png" alt="My LinkedIn profile" class="icon"
+        <img class="icon" src="./assets/linkedin_light.png" src-light="./assets/linkedin_light.png"
+          src-dark="./assets/linkedin_dark.png" alt="LinkedIn profile"
           onclick="location.href='https://www.linkedin.com/in/shahnniraj/'" />
-        <img /src="./assets/github.png" src-light="./assets/github_light.png" src-dark="./assets/github_dark.png"
-          alt="My Github profile" class="icon" onclick="location.href='https://github.com/Niraj058'" />
+        <img class="icon" src="./assets/github.png" src-light="./assets/github_light.png"
+          src-dark="./assets/github_dark.png" alt="GitHub profile"
+          onclick="location.href='https://github.com/Niraj058'" />
       </div>
     </div>
   </section>
+
+  <!-- About -->
   <section id="about">
     <p class="section__text__p1">Get To Know More</p>
     <h1 class="title">About Me</h1>
@@ -78,253 +80,213 @@
     <div class="about-details-container">
       <div class="about-containers">
         <div class="details-container">
-          <img /src="./assets/experience.png" src-light="./assets/experience_light.png"
+          <img src="./assets/experience.png" src-light="./assets/experience_light.png"
             src-dark="./assets/experience_dark.png" alt="Experience icon" class="icon" />
           <h3>Experience</h3>
           <p>1+ years <br />Software Development</p>
         </div>
+
         <div class="details-container">
-          <img /src="./assets/education.png" src-light="./assets/education_light.png"
+          <img src="./assets/education.png" src-light="./assets/education_light.png"
             src-dark="./assets/education_dark.png" alt="Education icon" class="icon" />
           <h3>Education</h3>
-          <p>Computer Science and Engineering <br />Specilazation : Mobile Applications<br />
-            Project Management<br />
-            User Expereicne Design
+          <p>
+            Computer Science & Engineering<br />
+            Specialization: Mobile Applications<br />
+            Project Management & UX Design
           </p>
         </div>
       </div>
+
       <div class="text-container">
         <p>
-          As a software developer, I possess a versatile skillset in mobile and web development.
-          My proficiency in Java and Kotlin, combined with my experience in creating robust application interfaces using
-          XML and MVC architecture,
-          along with SOAP/Rest web services and multiple database technologies. has allowed me to create responsive and
-          dynamic applications.
-          With extensive experience in frameworks, I have honed my expertise in developing dynamic and responsive
-          applications in Android, iOS, Flutter, and .Net.
-          I always adopt Agile and Scrum methodologies to ensure a collaborative approach and the delivery of
-          high-quality software solutions.
-          As a software developer, I am committed to excellence, and I strive to create innovative and efficient
-          solutions to complex problems.
+          I’m a full-stack/mobile developer focused on building student-friendly, performant apps.
+          I work across React/React Native, JavaScript/TypeScript, and Python (Flask), and I’m comfortable
+          designing REST APIs, modeling data (PostgreSQL/MySQL/SQLite), and shipping in agile teams with CI/CD.
+          On mobile, I’ve built with Kotlin/Jetpack Compose and Swift. I care about accessibility, clean code,
+          and measurable impact. I thrive in fast iterations: frame the problem, ship a slice, measure, improve.
         </p>
       </div>
     </div>
-    </div>
-    <img /src="./assets/arrow.png" src-light="./assets/arrow_light.png" src-dark="./assets/arrow_dark.png"
-      alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'" />
+
+    <img src="./assets/arrow.png" src-light="./assets/arrow_light.png" src-dark="./assets/arrow_dark.png"
+      alt="Down arrow" class="icon arrow" onclick="location.href='./#experience'" />
   </section>
+
+  <!-- Experience / Skills -->
   <section id="experience">
     <p class="section__text__p1">Explore My</p>
-    <h1 class="title">Experience</h1>
-    <div class="experience-details-container">
-      <div class="about-containers">
-        <div class="details-container">
-          <h2 class="experience-sub-title">Application Development</h2>
-          <div class="article-container">
-            <div class="wrap-circles">
+    <h1 class="title">Skills</h1>
+    <p class="skills-lead">Apple Activity ring style — quick visual of proficiency.</p>
 
-              <div class="circle per-80">
-                <div class="inner">80% </div>
-              </div>
-              <article>
-                <div>
-                  <h3>Kotlin</h3>
-                </div>
-              </article>
+    <div class="activity-grid">
+      <!-- Mobile -->
+      <div class="activity" role="img" aria-label="React Native 86 percent">
+        <div class="activity-ring" style="--p:86; --color: var(--ring-move)"></div>
+        <div class="value">86%</div>
+        <div class="name">React Native (Expo)</div>
+      </div>
+      <div class="activity" role="img" aria-label="Kotlin 80 percent">
+        <div class="activity-ring" style="--p:80; --color: var(--ring-exercise)"></div>
+        <div class="value">80%</div>
+        <div class="name">Kotlin</div>
+      </div>
+      <div class="activity" role="img" aria-label="Swift 72 percent">
+        <div class="activity-ring" style="--p:72; --color: var(--ring-stand)"></div>
+        <div class="value">72%</div>
+        <div class="name">Swift</div>
+      </div>
 
-              <div class="circle per-85">
-                <div class="inner"> 85% </div>
-              </div>
-              <article>
-                <div>
-                  <h3>Java</h3>
-                </div>
-              </article>
+      <!-- Frontend -->
+      <div class="activity" role="img" aria-label="React 82 percent">
+        <div class="activity-ring" style="--p:82; --color: var(--ring-exercise)"></div>
+        <div class="value">82%</div>
+        <div class="name">React</div>
+      </div>
+      <div class="activity" role="img" aria-label="TypeScript 79 percent">
+        <div class="activity-ring" style="--p:79; --color: var(--ring-stand)"></div>
+        <div class="value">79%</div>
+        <div class="name">TypeScript / JavaScript</div>
+      </div>
 
-              <div class="circle per-75">
-                <div class="inner">75% </div>
-              </div>
-              <article>
-                <div>
-                  <h3>XML</h3>
-                </div>
-              </article>
+      <!-- Backend & APIs -->
+      <div class="activity" role="img" aria-label="Flask 74 percent">
+        <div class="activity-ring" style="--p:74; --color: var(--ring-exercise)"></div>
+        <div class="value">74%</div>
+        <div class="name">Python (Flask)</div>
+      </div>
+      <div class="activity" role="img" aria-label="REST API Design 80 percent">
+        <div class="activity-ring" style="--p:80; --color: var(--ring-move)"></div>
+        <div class="value">80%</div>
+        <div class="name">REST API Design</div>
+      </div>
 
-              <div class="circle per-70">
-                <div class="inner">70% </div>
-              </div>
-              <article>
-                <div>
-                  <h3>Material UI</h3>
-                </div>
-              </article>
+      <!-- Data & DevOps -->
+      <div class="activity" role="img" aria-label="SQL 76 percent">
+        <div class="activity-ring" style="--p:76; --color: var(--ring-stand)"></div>
+        <div class="value">76%</div>
+        <div class="name">SQL (Postgres/MySQL/SQLite)</div>
+      </div>
+      <div class="activity" role="img" aria-label="Git and CI/CD 82 percent">
+        <div class="activity-ring" style="--p:82; --color: var(--ring-exercise)"></div>
+        <div class="value">82%</div>
+        <div class="name">Git & CI/CD</div>
+      </div>
+    </div>
 
-              <div class="circle per-70">
-                <div class="inner">70% </div>
-              </div>
-              <article>
-                <div>
-                  <h3>Objective C</h3>
-                </div>
-              </article>
-
-              <div class="circle per-70">
-                <div class="inner">70% </div>
-              </div>
-              <article>
-                <div>
-                  <h3>Swift</h3>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-
-        <div class="details-container">
-          <h2 class="experience-sub-title">Backend Development</h2>
-          <div class="article-container">
-            <div class="wrap-circles">
-              <div class="circle per-70">
-                <div class="inner">70%
-                </div>
-              </div>
-              <article>
-                <div>
-                  <h3>MySQL</h3>
-                </div>
-              </article>
-
-              <div class="circle per-70">
-                <div class="inner">70%
-                </div>
-              </div>
-              <article>
-                <div>
-                  <h3>NoSQL</h3>
-
-                </div>
-              </article>
-
-              <div class="circle per-75">
-                <div class="inner">75%
-                </div>
-              </div>
-              <article>
-                <div>
-                  <h3>REST API</h3>
-                </div>
-              </article>
-
-              <div class="circle per-75">
-                <div class="inner">75%</div>
-              </div>
-              <article>
-                <div>
-                  <h3>GIT</h3>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-        <img //src="./assets/arrow.png" src-light="./assets/arrow_light.png" src-dark="./assets/arrow_dark.png"
-          alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'" />
+    <img src="./assets/arrow.png" src-light="./assets/arrow_light.png" src-dark="./assets/arrow_dark.png"
+      alt="Down arrow" class="icon arrow" onclick="location.href='./#projects'" />
   </section>
+
+  <!-- Projects -->
   <section id="projects">
     <p class="section__text__p1">Browse My Recent</p>
     <h1 class="title">Projects</h1>
-    <div class="experience-details-container">
-      <div class="about-containers">
-        <div class="details-container color-container">
-          <div class="article-container">
-            <img /src="./assets/project-1.png" alt="" class="project-img"
-              onclick="window.open('./assets/Cannabis_Canada.pdf')" />
-          </div>
-          <!-- SPC Case Study Card -->
-          <a class="project-card spc-card" href="spc-streak-saver.html" aria-label="Open SPC Streak Saver case study">
-            <div class="spc-card-head">
-              <div class="spc-logo">SPC</div>
-              <h3>Streak Saver — micro-feature to gamify savings</h3>
-            </div>
-            <p>
-              A tiny React Native + Flask slice that turns “Spend. Save. Repeat.” into a habit loop.
-              Built with analytics and A/B testing in mind.
-            </p>
-            <div class="spc-badges">
-              <span class="spc-badge">React Native</span>
-              <span class="spc-badge">Flask</span>
-              <span class="spc-badge">REST</span>
-              <span class="spc-badge">Analytics</span>
-              <span class="spc-badge">CI/CD</span>
-            </div>
-            <div style="margin-top:10px; font-weight:600; color:#b9c6ff;">Read the case study →</div>
-          </a>
 
+    <div class="project-grid">
+      <!-- Project 1 -->
+      <article class="card">
+        <img src="./assets/project-1.png" alt="Cannabis Canada project cover" />
+        <div class="card-body">
+          <h3>Cannabis Canada</h3>
+          <p>Product discovery with clean category flows and responsive detail pages.</p>
+          <div class="tags">
+            <span class="tag">React</span>
+            <span class="tag">UI/UX</span>
+            <span class="tag">Responsive</span>
+          </div>
+          <div class="actions">
+            <button class="btn btn-color-2 project-btn"
+              onclick="location.href='https://github.com/Niraj058/Cannbis-Canada'">GitHub</button>
+            <button class="btn btn-color-2 project-btn" onclick="window.open('./assets/Cannabis_Canada.pdf')">Case
+              Doc</button>
+          </div>
+        </div>
+      </article>
 
-          <h2 class="experience-sub-title project-title">Cannbis Canada</h2>
-          <div class="btn-container">
+      <!-- SPC Case Study (link card) -->
+      <a class="card spc-card" href="spc-streak-saver.html" aria-label="Open SPC Streak Saver case study">
+        <div class="card-body">
+          <div class="spc-card-head">
+            <div class="spc-logo">SPC</div>
+            <h3>Streak Saver — micro-feature to gamify savings</h3>
+          </div>
+          <p>React Native + Flask slice that turns “Spend. Save. Repeat.” into a measurable habit loop.</p>
+          <div class="spc-badges">
+            <span class="spc-badge">React Native</span>
+            <span class="spc-badge">Flask</span>
+            <span class="spc-badge">REST</span>
+            <span class="spc-badge">Analytics</span>
+            <span class="spc-badge">CI/CD</span>
+          </div>
+          <div style="margin-top:10px;font-weight:600;color:#9ecfff">Read the case study →</div>
+        </div>
+      </a>
+
+      <!-- Project 2 -->
+      <article class="card">
+        <img src="./assets/project-2.png" alt="Learn@SLC project cover" />
+        <div class="card-body">
+          <h3>Learn@SLC</h3>
+          <p>Course catalog + schedules with a student-first information layout.</p>
+          <div class="tags">
+            <span class="tag">React</span>
+            <span class="tag">Design System</span>
+            <span class="tag">Docs</span>
+          </div>
+          <div class="actions">
             <button class="btn btn-color-2 project-btn"
-              onclick="location.href='https://github.com/Niraj058/Cannbis-Canada'">
-              Github
-            </button>
+              onclick="location.href='https://github.com/Niraj058/Learn-SLC'">GitHub</button>
             <button class="btn btn-color-2 project-btn"
-              onclick="location.href='https://xd.adobe.com/view/07290bca-b63d-4900-a19d-101426337f9e-527a/'">
-              Live Demo
-            </button>
+              onclick="window.open('./assets/Learn_at_Slc.pdf')">Documentation</button>
           </div>
         </div>
-        <div class="details-container color-container">
-          <div class="article-container">
-            <img /src="./assets/project-2.png" alt="Project 2" class="project-img"
-              onclick="window.open('./assets/Learn_at_Slc.pdf')" />
+      </article>
+
+      <!-- Project 3 -->
+      <article class="card">
+        <img src="./assets/project-3.png" alt="Blockchain Summit project cover" />
+        <div class="card-body">
+          <h3>Blockchain Summit</h3>
+          <p>Event site concept: agenda, speakers, sponsors — optimized for mobile.</p>
+          <div class="tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">Accessibility</span>
           </div>
-          <h2 class="experience-sub-title project-title">Learn@SLC</h2>
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/Niraj058/Learn-SLC'">
-              Github
-            </button>
-            <button class="btn btn-color-2 project-btn" onclick="window.open('./assets/Learn_at_Slc.pdf')">
-              Documentation
-            </button>
-          </div>
-        </div>
-        <div class="details-container color-container">
-          <div class="article-container">
-            <img /src="./assets/project-3.png" alt="Project 3" class="project-img"
-              onclick="window.open('./assets/Blockchain_Summit.pdf')" />
-          </div>
-          <h2 class="experience-sub-title project-title">Blockchain Summit</h2>
-          <div class="btn-container">
+          <div class="actions">
             <button class="btn btn-color-2 project-btn"
-              onclick="location.href='https://github.com/Niraj058/Blockchain_Summit'">
-              Github
-            </button>
-            <button class="btn btn-color-2 project-btn" onclick="window.open('./assets/Blockchain_Summit.pdf')">
-              Documentation
-            </button>
+              onclick="location.href='https://github.com/Niraj058/Blockchain_Summit'">GitHub</button>
+            <button class="btn btn-color-2 project-btn"
+              onclick="window.open('./assets/Blockchain_Summit.pdf')">Documentation</button>
           </div>
         </div>
-      </div>
+      </article>
     </div>
-    <img /src="./assets/arrow.png" src-light="./assets/arrow_light.png" src-dark="./assets/arrow_dark.png"
-      alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'" />
+
+    <img src="./assets/arrow.png" src-light="./assets/arrow_light.png" src-dark="./assets/arrow_dark.png"
+      alt="Down arrow" class="icon arrow" onclick="location.href='./#contact'" />
   </section>
+
+  <!-- Contact -->
   <section id="contact">
     <p class="section__text__p1">Get in touch</p>
     <h1 class="title">Contact Me</h1>
     <div class="contact-info-upper-container">
       <div class="contact-info-container">
-        <img /src="./assets/email.png" src-light="./assets/email_light.png" src-dark="./assets/email_dark.png"
+        <img src="./assets/email.png" src-light="./assets/email_light.png" src-dark="./assets/email_dark.png"
           alt="Email icon" class="icon contact-icon email-icon" />
         <p><a href="mailto:nirajshah@duck.com">Email Me</a></p>
       </div>
       <div class="contact-info-container">
-        &nbsp;
-        <img /src="./assets/linkedin_light.png" src-light="./assets/linkedin_light.png"
+        <img src="./assets/linkedin_light.png" src-light="./assets/linkedin_light.png"
           src-dark="./assets/linkedin_dark.png" alt="LinkedIn icon" class="icon contact-icon" />
         <p><a href="https://www.linkedin.com/in/shahnniraj/">LinkedIn</a></p>
       </div>
     </div>
   </section>
+
+  <!-- Footer -->
   <footer>
     <nav>
       <div class="nav-links-container">
@@ -337,6 +299,7 @@
     </nav>
     <p>Copyright &#169; 2025 Niraj Shah. All Rights Reserved.</p>
   </footer>
+
   <script src="script.js"></script>
 </body>
 

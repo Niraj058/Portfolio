@@ -3,12 +3,12 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <title>SPC “Streak Saver” — Case Study</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
     <style>
-        /* --- SPC page scoped styles (won't clash) --- */
+        /* Scoped styles for this case study page */
         :root {
             --spc-bg: #0b0c10;
             --spc-panel: #111319;
@@ -187,6 +187,11 @@
                     <div class="v">≥25%</div>
                     <div class="l">Weekly streak completion</div>
                 </div>
+                <div class="spc-metric">
+                    <div class="v">≤250ms</div>
+                    <div class="l">API p95 (dev infra)</div>
+                </div>
+            </div>
         </header>
 
         <section class="spc-panel">
@@ -208,8 +213,8 @@
             <h2>Solution Overview</h2>
             <p>
                 Add a <strong>StreakCard</strong> on Home with progress + next reward. Redeeming an offer advances the
-                streak; milestone rewards trigger.
-                Events are tracked and A/B-testable (3-of-5 vs 7-day).
+                streak;
+                milestone rewards trigger. Events are tracked and A/B-testable (3-of-5 vs 7-day).
             </p>
             <div class="spc-grid-2">
                 <div class="spc-box">
@@ -281,7 +286,6 @@ POST /redeem  // advances streak; validates offer; emits events</pre>
                 <li><strong>Day 5:</strong> Edge cases, polish, demo recording.</li>
             </ol>
         </section>
-
 
         <section id="repo" class="spc-panel">
             <h2>Repository <span class="spc-badge">Tests</span> <span class="spc-badge">CI/CD</span> <span
