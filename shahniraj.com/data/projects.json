@@ -1,45 +1,111 @@
 {
-  "categories": [
-    { "id": "webdev", "name": "Web Development" },
-    { "id": "cloud", "name": "Cloud" },
-    { "id": "automation", "name": "Automation" }
-  ],
-  "projects": [
-    {
-      "title": "Personal Portfolio Website",
-      "categories": ["webdev"],
-      "client": "Self",
-      "role": "Full Stack Developer",
-      "year": "2025",
-      "description": "A modern, interactive portfolio to showcase my skills, projects, and experience.",
-      "technologies": ["React", "JavaScript", "CSS3", "HTML5"],
-      "thumbnail": "/assets/project-1.png",
-      "images": ["/assets/project-1.png"],
-      "cta": [{"text": "View Live", "link": "#"}]
-    },
-    {
-      "title": "Cloud Automation Platform",
-      "categories": ["cloud"],
-      "client": "Tech Startup",
-      "role": "Backend Engineer",
-      "year": "2024",
-      "description": "Developed automation tools for cloud resource provisioning and monitoring.",
-      "technologies": ["Node.js", "AWS", "Docker"],
-      "thumbnail": "/assets/project-2.png",
-      "images": ["/assets/project-2.png"],
-      "cta": [{"text": "GitHub", "link": "#"}]
-    },
-    {
-      "title": "Workflow Automation Suite",
-      "categories": ["automation"],
-      "client": "Enterprise Client",
-      "role": "Lead Developer",
-      "year": "2023",
-      "description": "Built a suite of tools to automate business workflows and reporting.",
-      "technologies": ["Python", "SQL", "Docker"],
-      "thumbnail": "/assets/project-3.png",
-      "images": ["/assets/project-3.png"],
-      "cta": [{"text": "Case Study", "link": "#"}]
-    }
-  ]
+    "categories": [
+        {
+            "id": "presentation",
+            "name": "Presentation"
+        },
+        {
+            "id": "case-study",
+            "name": "Case Study"
+        },
+        {
+            "id": "report",
+            "name": "Report"
+        }
+    ],
+    "projects": [
+        {
+            "title": "Blockchain Summit Playbook",
+            "categories": [
+                "presentation",
+                "case-study"
+            ],
+            "client": "Blockchain Summit",
+            "role": "Conference Speaker & Solutions Architect",
+            "year": "2024",
+            "description": "A keynote deck outlining how enterprises can operationalise blockchain, with governance guardrails and phased roadmaps.",
+            "technologies": [
+                "Ethereum",
+                "Node.js",
+                "AWS",
+                "Conference Strategy"
+            ],
+            "thumbnail": "/images/project-images/portfolio-thumb.jpg",
+            "images": [
+                "/images/project-images/portfolio-thumb.jpg"
+            ],
+            "cta": [
+                {
+                    "text": "View Resource",
+                    "link": "/assets/Blockchain_Summit.pdf"
+                },
+                {
+                    "text": "Download PDF",
+                    "link": "/assets/Blockchain_Summit.pdf"
+                }
+            ]
+        },
+        {
+            "title": "Cannabis Canada Data Platform",
+            "categories": [
+                "case-study",
+                "report"
+            ],
+            "client": "Cannabis Canada",
+            "role": "Product Consultant & Lead Engineer",
+            "year": "2023",
+            "description": "Documenting the architecture behind a national compliance dashboard that unifies seed-to-sale telemetry for regulators.",
+            "technologies": [
+                "React",
+                "TypeScript",
+                "GraphQL",
+                "AWS"
+            ],
+            "thumbnail": "/images/project-images/dashcam.jpg",
+            "images": [
+                "/images/project-images/dashcam.jpg"
+            ],
+            "cta": [
+                {
+                    "text": "View Resource",
+                    "link": "/assets/Cannabis_Canada.pdf"
+                },
+                {
+                    "text": "Download PDF",
+                    "link": "/assets/Cannabis_Canada.pdf"
+                }
+            ]
+        },
+        {
+            "title": "Learn@SLC Automation Audit",
+            "categories": [
+                "report",
+                "case-study"
+            ],
+            "client": "Learn @ SLC",
+            "role": "Automation Strategist",
+            "year": "2022",
+            "description": "Assessment and roadmap for modernising digital learning workflows, removing manual touch points for student onboarding.",
+            "technologies": [
+                "Zapier",
+                "Make",
+                "Google Workspace",
+                "API Integration"
+            ],
+            "thumbnail": "/images/project-images/dreamolytic-thumb.jpg",
+            "images": [
+                "/images/project-images/dreamolytic-thumb.jpg"
+            ],
+            "cta": [
+                {
+                    "text": "View Resource",
+                    "link": "/assets/Learn_at_Slc.pdf"
+                },
+                {
+                    "text": "Download PDF",
+                    "link": "/assets/Learn_at_Slc.pdf"
+                }
+            ]
+        }
+    ]
 }

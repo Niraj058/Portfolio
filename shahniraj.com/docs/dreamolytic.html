@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dream-o-lytic – Project Documentation</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <style>
+        body {
+            background: #f8fafc;
+            color: #0f172a;
+            font-family: "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        .doc-container {
+            max-width: 860px;
+            margin: 96px auto;
+            padding: 56px 56px 64px;
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 32px 80px rgba(15, 23, 42, 0.12);
+        }
+
+        .doc-container h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .doc-container p.lead {
+            font-size: 1.1rem;
+            color: #475569;
+            margin-bottom: 2rem;
+        }
+
+        .doc-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 18px;
+            margin-bottom: 36px;
+        }
+
+        .doc-meta div {
+            padding: 14px 18px;
+            border-radius: 16px;
+            background: rgba(15, 23, 42, 0.05);
+        }
+
+        .doc-meta span {
+            display: block;
+            font-size: 0.8rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #64748b;
+            margin-bottom: 4px;
+        }
+
+        .doc-section {
+            margin-bottom: 32px;
+        }
+
+        .doc-section h2 {
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .doc-section ul {
+            list-style: disc;
+            padding-left: 1.25rem;
+            color: #334155;
+        }
+
+        .doc-nav {
+            max-width: 860px;
+            margin: 48px auto 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .doc-nav a {
+            font-weight: 600;
+            color: #2563eb;
+        }
+    </style>
+</head>
+<body>
+    <nav class="doc-nav">
+        <a href="../index.html#work">← Back to Projects</a>
+        <a href="https://www.dreamolytic.com" target="_blank" rel="noopener">Live App ↗</a>
+    </nav>
+
+    <main class="doc-container">
+        <h1>Dream-o-lytic</h1>
+        <p class="lead">
+            An AI-powered companion that transforms dream journals into meaningful insights through natural language processing and symbolic analysis.
+        </p>
+
+        <div class="doc-meta">
+            <div>
+                <span>Client</span>
+                Personal Project
+            </div>
+            <div>
+                <span>Role</span>
+                Product Designer & Full-Stack Developer
+            </div>
+            <div>
+                <span>Year</span>
+                2025
+            </div>
+            <div>
+                <span>Stack</span>
+                Laravel, Tailwind CSS, Alpine.js, OpenAI API
+            </div>
+        </div>
+
+        <section class="doc-section">
+            <h2>Project Overview</h2>
+            <p>
+                Dream-o-lytic invites users to log their nightly dreams, then leverages AI to surface themes, emotions, and symbolism rooted in psychology. The product pairs a serene interface with robust analysis tooling, making reflection and wellness rituals approachable.
+            </p>
+        </section>
+
+        <section class="doc-section">
+            <h2>Responsibilities</h2>
+            <ul>
+                <li>Authored the product strategy, user journeys, and visual identity for the MVP release.</li>
+                <li>Implemented authentication, subscription management, and secure data storage in Laravel.</li>
+                <li>Integrated OpenAI endpoints for contextual dream interpretation, sentiment scoring, and key phrase extraction.</li>
+                <li>Built responsive, motion-enhanced UI components with Tailwind CSS and Alpine.js.</li>
+            </ul>
+        </section>
+
+        <section class="doc-section">
+            <h2>Impact</h2>
+            <ul>
+                <li>Launched a public beta that grew to 1,500+ signups through organic wellness communities.</li>
+                <li>Reduced dream-analysis response time to under 3 seconds via caching and background job queues.</li>
+                <li>Captured anonymized insights to inform future coaching modules and content partnerships.</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

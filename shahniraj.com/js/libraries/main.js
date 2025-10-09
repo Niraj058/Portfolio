@@ -311,6 +311,50 @@ function updateContent() {
   }
 }
 
+// Create environment stars (separate from sphere) - optimized
+function createEnvironmentStars(scene, config, isLightSection = false) {
+  const stars = [];
+
+  for (let i = 0; i < config.starCount; i++) {
+    // Create star with variable size - use lower polygon count
+    const starSize =
+      config.starSizeMin +
+      Math.random() * (config.starSizeMax - config.starSizeMin);
+    const starGeometry = new THREE.SphereGeometry(starSize, 6, 6); // Reduced from 8,8 to 6,6
+    const starMaterial = new THREE.MeshBasicMaterial({
+      color: 0xffffff, // Always white, CSS filter will handle color changes
+      transparent: true,
+      opacity: Math.random() * 0.7 + 0.3, // Opacity range 0.3 to 1.0
+    });
+
+    const star = new THREE.Mesh(starGeometry, starMaterial);
+
+    // Position stars in a large sphere around the entire scene
+    const distance =
+      config.starDistanceMin +
+      Math.random() * (config.starDistanceMax - config.starDistanceMin);
+    const theta = Math.random() * Math.PI * 2;
+    const phi = Math.random() * Math.PI;
+
+    star.position.x = distance * Math.sin(phi) * Math.cos(theta);
+    star.position.y = distance * Math.sin(phi) * Math.sin(theta);
+    star.position.z = distance * Math.cos(phi);
+
+    // Add animation data
+    star.userData = {
+      originalOpacity: starMaterial.opacity,
+      twinkleOffset: Math.random() * Math.PI * 2,
+      twinkleSpeed: config.twinkleSpeed * (0.5 + Math.random()),
+      originalPosition: star.position.clone(),
+    };
+
+    scene.add(star);
+    stars.push(star);
+  }
+
+  return stars;
+}
+
 function renderCategoryFilters(categories) {
   const filterContainer = document.getElementById("category-filter");
   if (!filterContainer || !categories) return;
@@ -876,37 +920,21 @@ function createTravelingSphere() {
   }
 
   // Create connecting lines with adaptive count for performance
-  const lineCount = isLowEndDevice
-    ? 50
-    : window.innerWidth <= 768
-      ? 100
-      : 200;
+  const lineCount = sphere.isLowEndDevice ? 50 : (window.innerWidth <= 768 ? 100 : 200);
   for (let i = 0; i < lineCount; i++) {
-    const geometry = new THREE.Geometry();
+    // start and end points
+    const start = new THREE.Vector3(Math.random() * 2 - 1, Math.random() * 2 - 1, Math.random() * 2 - 1);
+    start.normalize().multiplyScalar(sphereSize * 0.4);
+    const end = start.clone().multiplyScalar(Math.random() * 0.3 + 1);
 
-    const vertex = new THREE.Vector3(
-      Math.random() * 2 - 1,
-      Math.random() * 2 - 1,
-      Math.random() * 2 - 1
-    );
-    vertex.normalize();
-    vertex.multiplyScalar(sphereSize * 0.4);
-
-    geometry.vertices.push(vertex);
-
-    const vertex2 = vertex.clone();
-    vertex2.multiplyScalar(Math.random() * 0.3 + 1);
-
-    geometry.vertices.push(vertex2);
-
-    const line = new THREE.Line(
-      geometry,
-      new THREE.LineBasicMaterial({
-        color: 0xffffff, // Start with white for black hero section
-        opacity: Math.random() * 0.3 + 0.1, // Reduced opacity for subtle effect
-        transparent: true,
-      })
-    );
+    // buffer geometry with 2 points
+    const geometry = new THREE.BufferGeometry().setFromPoints([start, end]);
+    const material = new THREE.LineBasicMaterial({
+      color: 0xffffff,
+      opacity: Math.random() * 0.3 + 0.1,
+      transparent: true,
+    });
+    const line = new THREE.Line(geometry, material);
     scene.add(line);
     lines.push(line);
   }
@@ -2966,49 +2994,6 @@ function createTravelingSphere() {
       ? 450
       : 900;
 
-  // Create environment stars (separate from sphere) - optimized
-  function createEnvironmentStars(scene, config, isLightSection = false) {
-    const stars = [];
-
-    for (let i = 0; i < config.starCount; i++) {
-      // Create star with variable size - use lower polygon count
-      const starSize =
-        config.starSizeMin +
-        Math.random() * (config.starSizeMax - config.starSizeMin);
-      const starGeometry = new THREE.SphereGeometry(starSize, 6, 6); // Reduced from 8,8 to 6,6
-      const starMaterial = new THREE.MeshBasicMaterial({
-        color: 0xffffff, // Always white, CSS filter will handle color changes
-        transparent: true,
-        opacity: Math.random() * 0.7 + 0.3, // Opacity range 0.3 to 1.0
-      });
-
-      const star = new THREE.Mesh(starGeometry, starMaterial);
-
-      // Position stars in a large sphere around the entire scene
-      const distance =
-        config.starDistanceMin +
-        Math.random() * (config.starDistanceMax - config.starDistanceMin);
-      const theta = Math.random() * Math.PI * 2;
-      const phi = Math.random() * Math.PI;
-
-      star.position.x = distance * Math.sin(phi) * Math.cos(theta);
-      star.position.y = distance * Math.sin(phi) * Math.sin(theta);
-      star.position.z = distance * Math.cos(phi);
-
-      // Add animation data
-      star.userData = {
-        originalOpacity: starMaterial.opacity,
-        twinkleOffset: Math.random() * Math.PI * 2,
-        twinkleSpeed: config.twinkleSpeed * (0.5 + Math.random()),
-        originalPosition: star.position.clone(),
-      };
-
-      scene.add(star);
-      stars.push(star);
-    }
-
-    return stars;
-  }
 
   // Determine if this is a light section based on container parent
   let isLightSection = false;

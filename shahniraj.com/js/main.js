@@ -39,6 +39,30 @@ async function loadContent() {
     } catch (error) { }
 }
 
+function showFloatingAnimation() {
+    const floating = document.querySelector(".floating-dotlottie");
+    if (!floating) return;
+
+    floating.classList.add("show");
+    setTimeout(() => {
+        floating.classList.remove("show");
+    }, 5000);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    loadContent().then(() => {
+        init3D();
+    });
+
+    if (document.readyState === "complete") {
+        showFloatingAnimation();
+    } else {
+        window.addEventListener("load", () => {
+            showFloatingAnimation();
+        }, { once: true });
+    }
+});
+
 // Slide-up fade title alternating animation
 function startAlternatingTitles(titleElement, titles) {
     if (!titles || titles.length <= 1) return;
@@ -257,11 +281,16 @@ function updateContent() {
                 "mobile-timezone-text"
             );
 
+            const locationNote = config.header.location.note;
+            const formattedLocation = locationNote
+                ? locationNote
+                : `${config.header.location.city}, ${config.header.location.country}`;
+
             if (locationText) {
-                locationText.textContent = `${config.header.location.city}, ${config.header.location.country}`;
+                locationText.textContent = formattedLocation;
             }
             if (mobileLocationText) {
-                mobileLocationText.textContent = `${config.header.location.city}, ${config.header.location.country}`;
+                mobileLocationText.textContent = formattedLocation;
             }
             if (timezoneText) {
                 timezoneText.textContent = config.header.location.timezone;
@@ -699,7 +728,7 @@ function init3D() {
     }
 
     // Create the traveling sphere
-    createTravelingSphere();
+    createTravelingSphere(true);
     setupScrollSphereAnimation();
 
     // Debug: Check if sphere container was created
@@ -769,7 +798,7 @@ function testSimpleSphere() {
     }
 }
 
-function createTravelingSphere() {
+function createTravelingSphere(isInteractive = true) {
     // Performance detection
     const isLowEndDevice =
         window.innerWidth <= 768 ||
@@ -1037,7 +1066,10 @@ function createTravelingSphere() {
         holdStartTime: null, // When the hold started
         isShaking: false, // Nervous shake state
         isExploding: false, // Explosion state
-        isDestroyed: false,
+        shouldReset: false,
+        isResetting: false,
+        pendingInteractiveState: isInteractive,
+        isInteractive,
         currentFilter: false, // Track current filter state (false = normal, true = inverted)
         // Performance optimization properties
         lastRenderTime: 0,
@@ -1106,11 +1138,6 @@ function animateTravelingSphere() {
     }
 
     requestAnimationFrame(animateTravelingSphere);
-
-    if (sphere.isDestroyed) {
-        sphere.renderer.render(sphere.scene, sphere.camera);
-        return;
-    }
 
     // Performance optimization: Adaptive frame skipping based on device capability
     const now = performance.now();
@@ -1271,9 +1298,11 @@ function animateTravelingSphere() {
                     userData.velocity.multiplyScalar(0.95); // Gradual stop
                 }
             } else {
-                sphere.isDestroyed = true;
-                sphere.isExploding = false;
-                userData.velocity.set(0, 0, 0);
+                if (!sphere.shouldReset) {
+                    sphere.isExploding = false;
+                    sphere.shouldReset = true;
+                    sphere.pendingInteractiveState = false;
+                }
                 return;
             }
             return;
@@ -1284,20 +1313,20 @@ function animateTravelingSphere() {
         let basePos = userData.originalPosition.clone();
 
         // Always apply rolling rotation (it naturally decays when not transitioning)
-        if (sphere.rollRotation && Math.abs(sphere.rollRotation) > 0.001) {
+        if (sphere.isInteractive && sphere.rollRotation && Math.abs(sphere.rollRotation) > 0.001) {
             const axis = new THREE.Vector3(0, 1, 0);
             basePos.applyAxisAngle(axis, sphere.rollRotation);
         }
 
         // Mouse interaction - rotate sphere with cursor in X and Y axis (constrained)
-        if (sphere.mouseInfluence) {
+        if (sphere.isInteractive && sphere.mouseInfluence) {
             // Constrained rotation - limit the maximum rotation angles
             const maxRotationX = Math.PI / 6; // 30 degrees max rotation on X-axis (up/down)
             const maxRotationY = Math.PI / 4; // 45 degrees max rotation on Y-axis (left/right)
 
             // Calculate constrained rotations based on mouse influence
-        const mouseRotationY = -sphere.mouseInfluence.x * maxRotationY; // Horizontal rotation (left/right)
-        const mouseRotationX = -sphere.mouseInfluence.y * maxRotationX; // Vertical rotation (up/down)
+            const mouseRotationY = -sphere.mouseInfluence.x * maxRotationY; // Horizontal rotation (left/right)
+            const mouseRotationX = -sphere.mouseInfluence.y * maxRotationX; // Vertical rotation (up/down)
 
             // Apply rotations in order: Y-axis first (left/right), then X-axis (up/down)
             basePos.applyAxisAngle(new THREE.Vector3(0, 1, 0), mouseRotationY); // Horizontal
@@ -1590,10 +1619,11 @@ function animateTravelingSphere() {
                     line.material.opacity *= 0.95;
                 }
             } else {
-                sphere.isDestroyed = true;
-                sphere.isExploding = false;
-                lineData.startVelocity.set(0, 0, 0);
-                lineData.endVelocity.set(0, 0, 0);
+                if (!sphere.shouldReset) {
+                    sphere.isExploding = false;
+                    sphere.shouldReset = true;
+                    sphere.pendingInteractiveState = false;
+                }
             }
             return;
         }
@@ -1614,21 +1644,21 @@ function animateTravelingSphere() {
             let endPos = lineData.originalEnd.clone();
 
             // Always apply rolling rotation (it naturally decays when not transitioning)
-            if (sphere.rollRotation && Math.abs(sphere.rollRotation) > 0.001) {
+            if (sphere.isInteractive && sphere.rollRotation && Math.abs(sphere.rollRotation) > 0.001) {
                 const axis = new THREE.Vector3(0, 1, 0);
                 startPos.applyAxisAngle(axis, sphere.rollRotation);
                 endPos.applyAxisAngle(axis, sphere.rollRotation);
             }
 
             // Apply sphere rotation to line start and end points with X and Y axis (constrained)
-            if (sphere.mouseInfluence) {
+            if (sphere.isInteractive && sphere.mouseInfluence) {
                 // Constrained rotation - same limits as particles
                 const maxRotationX = Math.PI / 6; // 30 degrees max rotation on X-axis (up/down)
                 const maxRotationY = Math.PI / 4; // 45 degrees max rotation on Y-axis (left/right)
 
                 // Calculate constrained rotations based on mouse influence
-        const mouseRotationY = -sphere.mouseInfluence.x * maxRotationY; // Horizontal rotation (left/right)
-        const mouseRotationX = -sphere.mouseInfluence.y * maxRotationX; // Vertical rotation (up/down)
+                const mouseRotationY = -sphere.mouseInfluence.x * maxRotationY; // Horizontal rotation (left/right)
+                const mouseRotationX = -sphere.mouseInfluence.y * maxRotationX; // Vertical rotation (up/down)
 
                 // Apply rotations in order to both start and end points: Y-axis first, then X-axis
                 startPos.applyAxisAngle(
@@ -1720,13 +1750,9 @@ function animateTravelingSphere() {
         (sphere.targetCameraPosition.z - sphere.currentCameraPosition.z) *
         lerpSpeed;
 
-    // Apply mouse influence to the interpolated position before velocity calculation
     let currentCameraX = sphere.currentCameraPosition.x;
     let currentCameraY = sphere.currentCameraPosition.y;
     let currentCameraZ = sphere.currentCameraPosition.z;
-
-    // Mouse influence no longer affects camera position - only sphere rotation
-    // Camera stays in its interpolated position for section transitions
 
     // Calculate movement velocity for natural deceleration (including mouse influence)
     const previousPosition = sphere.previousCameraPosition || {
@@ -1750,22 +1776,26 @@ function animateTravelingSphere() {
     };
 
     // Update roll rotation with velocity-based deceleration for natural feel
-    if (sphere.isTransitioning) {
-        // Still moving between sections - maintain rotation speed
-        sphere.rollRotation += 0.015; // Reduced from 0.03
-    } else {
-        // Calculate deceleration based on actual movement velocity
-        const minVelocity = 0.001; // Minimum velocity to consider "moving"
-        const velocityFactor = Math.min(velocity * 20, 1); // Scale velocity to rotation influence
+    if (sphere.isInteractive) {
+        if (sphere.isTransitioning) {
+            // Still moving between sections - maintain rotation speed
+            sphere.rollRotation += 0.015; // Reduced from 0.03
+        } else {
+            // Calculate deceleration based on actual movement velocity
+            const minVelocity = 0.001; // Minimum velocity to consider "moving"
+            const velocityFactor = Math.min(velocity * 20, 1); // Scale velocity to rotation influence
 
-        if (velocity > minVelocity) {
-            // Still has momentum - continue rotating but slow down based on velocity
-            const rotationSpeed = 0.005 + velocityFactor * 0.01; // Reduced from 0.01 + 0.02
-            sphere.rollRotation += rotationSpeed;
+            if (velocity > minVelocity) {
+                // Still has momentum - continue rotating but slow down based on velocity
+                const rotationSpeed = 0.005 + velocityFactor * 0.01; // Reduced from 0.01 + 0.02
+                sphere.rollRotation += rotationSpeed;
+            }
+
+            // Always apply gradual decay for smooth stop
+            sphere.rollRotation *= 0.985; // Slightly less aggressive decay for more natural feel
         }
-
-        // Always apply gradual decay for smooth stop
-        sphere.rollRotation *= 0.985; // Slightly less aggressive decay for more natural feel
+    } else {
+        sphere.rollRotation = 0;
     }
 
     // Update camera position with mouse influence applied as an offset
@@ -1778,6 +1808,33 @@ function animateTravelingSphere() {
     sphere.container.style.height = `${sphere.sphereSize}px`;
 
     sphere.renderer.render(sphere.scene, sphere.camera);
+
+    if (sphere.shouldReset && !sphere.isResetting) {
+        sphere.isResetting = true;
+        resetTravelingSphere(sphere.pendingInteractiveState);
+        return;
+    }
+}
+
+function resetTravelingSphere(interactive = false) {
+    const sphere = portfolio.travelingSphere;
+    if (!sphere) return;
+
+    if (sphere.renderer && typeof sphere.renderer.dispose === "function") {
+        sphere.renderer.dispose();
+    }
+
+    if (sphere.container && sphere.container.parentNode) {
+        sphere.container.parentNode.removeChild(sphere.container);
+    }
+
+    portfolio.travelingSphere = null;
+    portfolio.currentSection = "hero";
+
+    requestAnimationFrame(() => {
+        createTravelingSphere(interactive);
+        updateSpherePosition("hero", false);
+    });
 }
 
 function updateSpherePosition(sectionId, animate = true) {
@@ -2038,7 +2095,7 @@ window.addEventListener("resize", () => {
 let lastMouseMoveTime = Date.now();
 window.addEventListener("mousemove", (e) => {
     const sphere = portfolio.travelingSphere;
-    if (sphere) {
+    if (sphere && sphere.isInteractive) {
         lastMouseMoveTime = Date.now();
 
         // Normalize mouse position to [-1, 1] range, constrained to viewport
@@ -2066,7 +2123,7 @@ window.addEventListener("mousemove", (e) => {
 // Decay mouse influence when not moving mouse
 setInterval(() => {
     const sphere = portfolio.travelingSphere;
-    if (sphere && Date.now() - lastMouseMoveTime > 2000) {
+    if (sphere && sphere.isInteractive && Date.now() - lastMouseMoveTime > 2000) {
         // After 2 seconds of no mouse movement
         sphere.mouseInfluence.x *= 0.95; // Gradually return to neutral
         sphere.mouseInfluence.y *= 0.95;
@@ -2079,7 +2136,7 @@ let sphereHoldTimeout;
 // Make sphere containers clickable anywhere on page
 document.addEventListener("mousedown", (e) => {
     const sphere = portfolio.travelingSphere;
-    if (sphere && !sphere.isExploding) {
+    if (sphere && sphere.isInteractive && !sphere.isExploding) {
         sphere.isBeingHeld = true;
         sphere.holdStartTime = Date.now();
 
@@ -2127,69 +2184,7 @@ document.addEventListener("mouseleave", () => {
     }
 }); // Add keyboard shortcut for testing - removed since CSS masks handle color changes
 
-// Create toast notification
-function createToastNotification() {
-    // Check if toast already exists
-    if (document.getElementById("interaction-toast")) {
-        return;
-    }
-
-    const toast = document.createElement("div");
-    toast.id = "interaction-toast";
-    toast.className = "toast-notification";
-    toast.innerHTML = `
-          <button class="toast-close" onclick="dismissToast()">&times;</button>
-          Click and hold anywhere for 3 seconds to remove distractions
-        `;
-
-    document.body.appendChild(toast);
-
-    // Show toast after a brief delay
-    setTimeout(() => {
-        toast.classList.add("show");
-    }, 1000);
-
-    // Auto-hide toast after 8 seconds
-    setTimeout(() => {
-        dismissToast();
-    }, 8000);
-}
-
-// Dismiss toast notification
-function dismissToast() {
-    const toast = document.getElementById("interaction-toast");
-    if (toast) {
-        toast.classList.remove("show");
-        setTimeout(() => {
-            if (toast.parentNode) {
-                toast.parentNode.removeChild(toast);
-            }
-        }, 400);
-    }
-}
-
 // Initialize everything
-document.addEventListener("DOMContentLoaded", function () {
-    // Remove any loading classes
-    document.body.classList.remove("loading");
-    document.body.classList.add("overflow-auto");
-
-    // Hide any loaders
-    const loaders = document.querySelectorAll(".loader, #loader");
-    loaders.forEach((loader) => {
-        loader.classList.add("hidden");
-    });
-
-    // Load content and initialize 3D
-    loadContent().then(() => {
-        init3D();
-    });
-
-    // Create and show toast notification
-    setTimeout(() => {
-        createToastNotification();
-    }, 2000); // Show toast 2 seconds after page load
-});
 
 // Simple footer color update
 function updateFooterColor() {

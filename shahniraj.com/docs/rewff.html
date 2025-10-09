@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RewFF – Project Documentation</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <style>
+        body {
+            background: #f8fafc;
+            color: #0f172a;
+            font-family: "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        .doc-container {
+            max-width: 860px;
+            margin: 96px auto;
+            padding: 56px 56px 64px;
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 32px 80px rgba(15, 23, 42, 0.12);
+        }
+
+        .doc-container h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .doc-container p.lead {
+            font-size: 1.1rem;
+            color: #475569;
+            margin-bottom: 2rem;
+        }
+
+        .doc-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 18px;
+            margin-bottom: 36px;
+        }
+
+        .doc-meta div {
+            padding: 14px 18px;
+            border-radius: 16px;
+            background: rgba(15, 23, 42, 0.05);
+        }
+
+        .doc-meta span {
+            display: block;
+            font-size: 0.8rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #64748b;
+            margin-bottom: 4px;
+        }
+
+        .doc-section {
+            margin-bottom: 32px;
+        }
+
+        .doc-section h2 {
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .doc-section ul {
+            list-style: disc;
+            padding-left: 1.25rem;
+            color: #334155;
+        }
+
+        .doc-nav {
+            max-width: 860px;
+            margin: 48px auto 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .doc-nav a {
+            font-weight: 600;
+            color: #2563eb;
+        }
+    </style>
+</head>
+<body>
+    <nav class="doc-nav">
+        <a href="../index.html#work">← Back to Projects</a>
+        <a href="https://github.com/ismailkit/rewff" target="_blank" rel="noopener">Source Code ↗</a>
+    </nav>
+
+    <main class="doc-container">
+        <h1>RewFF Community Platform</h1>
+        <p class="lead">
+            An open-source, self-hosted chat environment that experiments with gamified communities, realtime collaboration, and privacy-first social experiences.
+        </p>
+
+        <div class="doc-meta">
+            <div>
+                <span>Client</span>
+                Personal Project
+            </div>
+            <div>
+                <span>Role</span>
+                Product Designer & Full-Stack Engineer
+            </div>
+            <div>
+                <span>Year</span>
+                2023
+            </div>
+            <div>
+                <span>Stack</span>
+                React, Node.js, Express, Socket.io, MongoDB
+            </div>
+        </div>
+
+        <section class="doc-section">
+            <h2>Project Overview</h2>
+            <p>
+                RewFF (short for Rewind & Forward) is a playground for exploring decentralised communities. It combines a React front-end with a Node.js and Socket.io backend to create realtime chat, achievements, and community moderation workflows that can be deployed to any VPS.
+            </p>
+        </section>
+
+        <section class="doc-section">
+            <h2>Responsibilities</h2>
+            <ul>
+                <li>Designed the product vision, information architecture, and interface system to support chat, forums, and gamified challenges.</li>
+                <li>Implemented a modular socket layer for private rooms, live presence indicators, and emoji reactions.</li>
+                <li>Built an extensible plugin system so admins can add moderation rules, reward logic, or integrations without touching core code.</li>
+                <li>Authored technical documentation and deployment scripts for Docker-based hosting.</li>
+            </ul>
+        </section>
+
+        <section class="doc-section">
+            <h2>Impact</h2>
+            <ul>
+                <li>Adopted by small creator communities to host self-governed conversations outside traditional social media.</li>
+                <li>Provided a reference architecture for clients exploring private community platforms and realtime collaboration.</li>
+                <li>Shaped internal reusable modules I now apply to client chatbots, live dashboards, and collaborative tools.</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
