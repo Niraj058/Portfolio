@@ -1,0 +1,45 @@
+{
+  "categories": [
+    { "id": "webdev", "name": "Web Development" },
+    { "id": "cloud", "name": "Cloud" },
+    { "id": "automation", "name": "Automation" }
+  ],
+  "projects": [
+    {
+      "title": "Personal Portfolio Website",
+      "categories": ["webdev"],
+      "client": "Self",
+      "role": "Full Stack Developer",
+      "year": "2025",
+      "description": "A modern, interactive portfolio to showcase my skills, projects, and experience.",
+      "technologies": ["React", "JavaScript", "CSS3", "HTML5"],
+      "thumbnail": "/assets/project-1.png",
+      "images": ["/assets/project-1.png"],
+      "cta": [{"text": "View Live", "link": "#"}]
+    },
+    {
+      "title": "Cloud Automation Platform",
+      "categories": ["cloud"],
+      "client": "Tech Startup",
+      "role": "Backend Engineer",
+      "year": "2024",
+      "description": "Developed automation tools for cloud resource provisioning and monitoring.",
+      "technologies": ["Node.js", "AWS", "Docker"],
+      "thumbnail": "/assets/project-2.png",
+      "images": ["/assets/project-2.png"],
+      "cta": [{"text": "GitHub", "link": "#"}]
+    },
+    {
+      "title": "Workflow Automation Suite",
+      "categories": ["automation"],
+      "client": "Enterprise Client",
+      "role": "Lead Developer",
+      "year": "2023",
+      "description": "Built a suite of tools to automate business workflows and reporting.",
+      "technologies": ["Python", "SQL", "Docker"],
+      "thumbnail": "/assets/project-3.png",
+      "images": ["/assets/project-3.png"],
+      "cta": [{"text": "Case Study", "link": "#"}]
+    }
+  ]
+}

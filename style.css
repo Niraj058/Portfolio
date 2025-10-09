@@ -25,6 +25,7 @@
   --btn-bg: #111827;
 
   /* activity ring colors */
+
   --ring-move: #ff2d55;
   /* Move (red/pink) */
   --ring-exercise: #34c759;
@@ -344,6 +345,83 @@ section {
   bottom: 2.5rem;
 }
 
+/* ==== SKILLS SECTION (mirrors your about styles) ==== */
+
+/* If your section id is #experience (your current markup), keep this.
+   If you switch to #skills, just replace #experience with #skills below. */
+#experience {
+  position: relative;
+}
+
+/* Outer grid/row that holds your skills content */
+.skills-containers {
+  display: flex;
+  flex-wrap: wrap;
+  /* lets items wrap on small screens */
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+/* Column wrapper for text + lists + rings inside the skills section */
+.skills-details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1 1 100%;
+}
+
+/* Individual skills panel (like your old .details-container) */
+.skill-container {
+  padding: 1.5rem;
+  flex: 1 1 360px;
+  /* grows, but won’t get too tiny */
+  background: var(--primary-color-2);
+  border-radius: 2rem;
+  border: var(--button-border);
+  border-color: var(--container-border);
+  text-align: center;
+}
+
+/* Make inner grids (rings/meters/tags) expand and fill nicely */
+.skill-container .activity-grid,
+.skill-container .skills-card-grid,
+.skill-container .skill-columns {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  margin-top: 12px;
+}
+
+/* Headings/labels inside panels */
+.skill-container h3,
+.skill-container h4 {
+  margin-bottom: .5rem;
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+.skill-container .muted {
+  color: var(--muted, #a8b3c7);
+  font-size: 14px;
+}
+
+/* Optional: a “vibrant” modifier for light mode pop (keep dark as-is) */
+.skill-container.vibrant {
+  border: 1.5px solid transparent;
+  background:
+    linear-gradient(var(--primary-color-2), var(--primary-color-2)) padding-box,
+    linear-gradient(135deg, #7c3aed, #06b6d4, #22c55e) border-box;
+  box-shadow: 0 10px 28px rgba(2, 6, 23, .06);
+}
+
+/* Responsive tweak: stack panels on narrow screens */
+@media (max-width: 768px) {
+  .skill-container {
+    flex: 1 1 100%;
+  }
+}
+
+
 /* ===== Experience / Skills (Apple Rings) ===== */
 #experience {
   position: relative;
@@ -353,6 +431,23 @@ section {
   color: var(--muted);
   margin-top: 6px;
 }
+
+
+/* === One-color Apple-style skill ring (same size + animated) === */
+:root {
+  --ring-size: 136px;
+  /* same diameter for every skill */
+  --ring-thickness: 12px;
+  /* ring width */
+  --ring-track: #e5e7eb;
+  /* track (light) */
+}
+
+[theme="dark"] {
+  --ring-track: #1f2937;
+}
+
+/* track in dark mode */
 
 .activity-grid {
   display: grid;
@@ -367,7 +462,7 @@ section {
   }
 }
 
-.activity {
+.skill-meter {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -375,77 +470,105 @@ section {
   text-align: center;
 }
 
-.activity-ring {
-  --size: 140px;
-  --thickness: 14px;
-  --p: 75;
-  --color: var(--ring-move);
-  --t: 1;
-  width: var(--size);
-  height: var(--size);
-  position: relative;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  will-change: transform;
-}
-
-.activity-ring::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background: conic-gradient(var(--color) calc(var(--p) * var(--t) * 1%), var(--ring-track) 0);
-  -webkit-mask: radial-gradient(farthest-side, transparent calc(50% - var(--thickness)), #000 calc(50% - var(--thickness) + 1px));
-  mask: radial-gradient(farthest-side, transparent calc(50% - var(--thickness)), #000 calc(50% - var(--thickness) + 1px));
-  box-shadow: 0 8px 24px rgba(0, 0, 0, .25) inset;
-  transition: background 400ms ease;
-}
-
-.activity .value {
-  font-weight: 700;
-  font-size: 20px;
-  color: var(--secondary-color);
-  line-height: 1;
-}
-
-.activity .name {
-  color: var(--secondary-color-2);
-  font-size: 14px;
-}
-
-.activity-ring:hover {
-  transform: translateY(-2px) scale(1.02);
-  transition: transform .18s ease;
-}
-
-/* Animate ring fill (0 -> target) */
-@property --t {
-  syntax: "<number>";
+/* We animate a typed custom property for smooth interpolation */
+@property --progress {
+  syntax: '<number>';
   inherits: false;
   initial-value: 0;
 }
 
-.activity-ring {
-  --t: 0;
-  animation: ring-fill 900ms ease-out forwards;
+/* container + label */
+.ring {
+  position: relative;
+  width: 122px;
+  height: 122px;
+  display: grid;
+  place-items: center;
+  margin: 12px auto;
+  isolation: isolate;
 }
 
-@keyframes ring-fill {
-  to {
-    --t: 1;
+.name {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--secondary-color-2, #666);
+  text-align: center;
+}
+
+/* svg */
+.progress-ring {
+  width: 122px;
+  height: 122px;
+  transform: rotate(-90deg);
+  /* start at 12 o'clock */
+}
+
+/* animated stroke */
+.progress-ring__circle {
+  stroke-dasharray: 0 1;
+  /* set by JS after length calc */
+  stroke-dashoffset: 0;
+  /* set by JS */
+}
+
+/* dot at the rim that rotates with progress */
+.dot {
+  z-index: 2;
+  position: absolute;
+  inset: 0;
+  transform: rotate(0deg);
+  /* JS updates */
+  transition: transform .2s linear;
+  /* just a tiny smoothing */
+}
+
+.dot:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: 3px 0 3px rgba(0, 0, 0, .24);
+}
+
+/* optional: reduce motion users see final state immediately */
+@media (prefers-reduced-motion: reduce) {
+  .progress-ring__circle {
+    transition: none !important;
   }
 }
 
-@media (max-width: 420px) {
-  .activity-grid {
-    grid-template-columns: 1fr;
-  }
+/* ===== One-color skill ring (same size + animated) ===== */
+.skill-ring {
+  /* per-item inline: --p (0..100), --ring-color */
+  --p: 0;
+  --ring-color: #34c759;
+  --progress: 0;
+  width: var(--ring-size);
+  height: var(--ring-size);
+  position: relative;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+}
 
-  .activity-ring {
-    --size: 120px;
-    --thickness: 12px;
-  }
+/* colored arc + hollow center; fill = --p * --progress */
+.skill-ring::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(var(--ring-color) calc((var(--p) * var(--progress, 0)) * 1%), var(--ring-track) 0);
+  -webkit-mask:
+    radial-gradient(farthest-side, transparent calc(50% - var(--ring-thickness)),
+      #000 calc(50% - var(--ring-thickness) + 1px));
+  mask:
+    radial-gradient(farthest-side, transparent calc(50% - var(--ring-thickness)),
+      #000 calc(50% - var(--ring-thickness) + 1px));
 }
 
 /* ===== Projects / Cards ===== */
@@ -604,4 +727,130 @@ footer {
 
 footer p {
   text-align: center;
+}
+
+/* === Apple Activity Rings (matches your HTML) === */
+:root {
+  --ring-size: 136px;
+  /* diameter */
+  --ring-thickness: 12px;
+  /* ring width */
+  --ring-track: #e5e7eb;
+  /* light track */
+}
+
+[theme="dark"] {
+  --ring-track: #1f2937;
+}
+
+.activity-grid {
+  display: grid;
+  gap: 22px;
+  grid-template-columns: repeat(2, minmax(180px, 1fr));
+  margin-top: 18px;
+}
+
+@media (min-width:900px) {
+  .activity-grid {
+    grid-template-columns: repeat(4, minmax(180px, 1fr));
+  }
+}
+
+.activity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+/* JS animates --progress (0 → 1). You set --p and --color inline on the element. */
+.activity-ring {
+  --p: 0;
+  /* percent (0..100), set inline in HTML */
+  --color: #34c759;
+  /* fallback color if not provided inline */
+  --progress: 0;
+  /* animated by JS */
+  width: var(--ring-size);
+  height: var(--ring-size);
+  position: relative;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+}
+
+.activity-ring::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  /* Fill angle = --p * --progress */
+  background:
+    conic-gradient(var(--color) calc((var(--p) * var(--progress)) * 1%),
+      var(--ring-track) 0);
+  /* Hollow center (donut) */
+  -webkit-mask: radial-gradient(farthest-side,
+      transparent calc(50% - var(--ring-thickness)),
+      #000 calc(50% - var(--ring-thickness) + 1px));
+  mask: radial-gradient(farthest-side,
+      transparent calc(50% - var(--ring-thickness)),
+      #000 calc(50% - var(--ring-thickness) + 1px));
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .25) inset;
+}
+
+.activity .value {
+  position: relative;
+  z-index: 1;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--secondary-color);
+}
+
+.activity .name {
+  font-size: 14px;
+  color: var(--secondary-color-2);
+}
+
+@media (max-width:480px) {
+  :root {
+    --ring-size: 120px;
+    --ring-thickness: 10px;
+  }
+}
+
+/* Skills cards container (two cards side-by-side on wide screens) */
+.skills-card-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 1fr;
+  /* mobile: single column */
+}
+
+@media (min-width: 1000px) {
+  .skills-card-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* desktop: 2 columns */
+}
+
+/* Make card content use full width; let the skills grid expand */
+.skills-card-grid .card {
+  height: 100%;
+}
+
+.skills-card-grid .card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* The skills/rings area fills the card width with flexible columns */
+.activity-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  align-content: start;
+  width: 100%;
 }

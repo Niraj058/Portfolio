@@ -2,305 +2,514 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio — Niraj Shah</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="mediaqueries.css" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NJR1P4BTC0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-NJR1P4BTC0");
+  </script>
+
+  <!-- Core Meta Data -->
+  <meta name="author" content="Kitmane" />
+  <meta name="description" content="Ismail Kitmane - Product developer" />
+  <meta name="keywords"
+    content="web designer,front-end developer,web agency,interactive design,threejs,3d site,responsive,html5,css3,jquery" />
+  <!-- Google Tag Manager -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != "dataLayer" ? "&l=" + l : "";
+      j.async = true;
+      j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "GTM-P3TX65PV");
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" href="images/favicons/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="images/favicons/favicon-16x16.png" sizes="16x16" />
+  <link rel="mask-icon" href="images/favicons/safari-pinned-tab.svg" color="#21252b" />
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="manifest" href="images/favicons/manifest.json" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="kitmane" />
+  <meta property="og:url" content="http://kitmane.com/" />
+  <meta property="og:description" content="Ismail Kitmane - Portfolio" />
+  <meta property="og:image" content="https://www.kitmane.com/images/preview-image.jpg" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="kitmane" />
+  <meta property="og:type" content="website" />
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title id="page-title">Kitmane - Digital Factory</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/main.css" />
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+
+  <!-- Devicon CSS for technology icons -->
+  <link rel="stylesheet" type="text/css" href="css/devicon.min.css" />
 </head>
 
 <body>
-  <!-- Desktop Nav -->
-  <nav id="desktop-nav">
-    <div class="logo">Niraj Shah</div>
-    <div>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li>
-          <img id="modeToggle" class="icon color-icon" src="./assets/theme_dark.png" src-light="./assets/theme_dark.png"
-            src-dark="./assets/theme_light.png" alt="Toggle theme" />
-        </li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Mobile/Hamburger Nav -->
-  <nav id="hamburger-nav">
-    <div class="logo">Niraj Shah</div>
-    <div class="hamburger-menu">
-      <div class="hamburger-icon" onclick="toggleMenu()">
-        <span></span><span></span><span></span>
+  <!-- Fixed Header -->
+  <header id="fixed-header" class="fixed-header">
+    <div class="header-content">
+      <!-- Left: Logo -->
+      <div class="header-left">
+        <a href="#hero" class="header-logo" id="header-logo">Kitmane</a>
       </div>
-      <div class="menu-links">
-        <li><a href="#about" onclick="toggleMenu()">About</a></li>
-        <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-        <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-        <li>
-          <img id="modeToggle2" class="icon color-icon" src="./assets/theme_dark.png"
-            src-light="./assets/theme_dark.png" src-dark="./assets/theme_light.png" alt="Toggle theme" />
-        </li>
-      </div>
-    </div>
-  </nav>
 
-  <!-- Hero/Profile -->
-  <section id="profile">
-    <div class="section__pic-container">
-      <img src="./assets/profile-pic.png" alt="Niraj Shah profile picture" />
-    </div>
-    <div class="section__text">
-      <p class="section__text__p1">Hello, I'm</p>
-      <h1 class="title">Niraj Shah</h1>
-      <p class="section__text__p2">Software Developer</p>
-      <div class="btn-container">
-        <button class="btn btn-color-2" onclick="window.open('./assets/resume-example.pdf')">Download CV</button>
-        <button class="btn btn-color-1" onclick="location.href='./#contact'">Contact Info</button>
-      </div>
-      <div id="socials-container">
-        <img class="icon" src="./assets/linkedin_light.png" src-light="./assets/linkedin_light.png"
-          src-dark="./assets/linkedin_dark.png" alt="LinkedIn profile"
-          onclick="location.href='https://www.linkedin.com/in/shahnniraj/'" />
-        <img class="icon" src="./assets/github.png" src-light="./assets/github_light.png"
-          src-dark="./assets/github_dark.png" alt="GitHub profile"
-          onclick="location.href='https://github.com/Niraj058'" />
-      </div>
-    </div>
-  </section>
+      <!-- Right: Status and Info Badges -->
+      <div class="header-right">
+        <div class="header-badges">
+          <!-- Available for work badge -->
+          <div class="header-badge status-badge" id="status-badge">
+            <span class="status-dot" id="status-dot"></span>
+            <span class="status-text" id="status-text">Available for work</span>
+          </div>
 
-  <!-- About -->
-  <section id="about">
-    <p class="section__text__p1">Get To Know More</p>
-    <h1 class="title">About Me</h1>
+          <!-- Location badge -->
+          <div class="header-badge location-badge" id="location-badge">
+            <span class="location-text" id="location-text">Casablanca, Morocco</span>
+          </div>
 
-    <div class="about-details-container">
-      <div class="about-containers">
-        <div class="details-container">
-          <img src="./assets/experience.png" src-light="./assets/experience_light.png"
-            src-dark="./assets/experience_dark.png" alt="Experience icon" class="icon" />
-          <h3>Experience</h3>
-          <p>1+ years <br />Software Development</p>
+          <!-- Timezone badge -->
+          <div class="header-badge timezone-badge" id="timezone-badge">
+            <span class="timezone-text" id="timezone-text">UTC+1</span>
+          </div>
+
+          <!-- Current time badge -->
+          <div class="header-badge time-badge" id="time-badge">
+            <span class="time-text" id="time-text">--:--</span>
+          </div>
+
+          <!-- Start a project badge -->
+          <a href="#" class="project-badge project-toggle" id="project-cta-header">
+            <span class="project-text">Start a project</span>
+          </a>
         </div>
+      </div>
+      <!-- Mobile Menu Toggle Button -->
+      <button id="mobile-menu-toggle" class="mobile-menu-toggle">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
 
-        <div class="details-container">
-          <img src="./assets/education.png" src-light="./assets/education_light.png"
-            src-dark="./assets/education_dark.png" alt="Education icon" class="icon" />
-          <h3>Education</h3>
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Hero Section -->
+    <section id="hero" class="section dark-theme">
+      <div class="section-content">
+        <p class="hero-subtitle" id="hero-subtitle">Loading...</p>
+        <div class="hero-title-container">
+          <h1 id="hero-title" class="hero-title-slide">Loading...</h1>
+        </div>
+        <p id="hero-tagline">Loading...</p>
+      </div>
+      <div class="three-container overlay-container"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section light-theme">
+      <div class="section-content">
+        <h2 id="about-title">Loading...</h2>
+        <p id="about-description">Loading...</p>
+        <div class="mt-20">
           <p>
-            Computer Science & Engineering<br />
-            Specialization: Mobile Applications<br />
-            Project Management & UX Design
+            <strong>Skills:</strong>
+            <span id="skills-list">Loading...</span>
+          </p>
+          <p>
+            <strong>Experience:</strong>
+            <span id="experience">Loading...</span>
+          </p>
+          <p>
+            <strong>Location:</strong> <span id="location">Loading...</span>
           </p>
         </div>
       </div>
+      <div class="three-container overlay-container"></div>
+    </section>
 
-      <div class="text-container">
-        <p>
-          I’m a full-stack/mobile developer focused on building student-friendly, performant apps.
-          I work across React/React Native, JavaScript/TypeScript, and Python (Flask), and I’m comfortable
-          designing REST APIs, modeling data (PostgreSQL/MySQL/SQLite), and shipping in agile teams with CI/CD.
-          On mobile, I’ve built with Kotlin/Jetpack Compose and Swift. I care about accessibility, clean code,
-          and measurable impact. I thrive in fast iterations: frame the problem, ship a slice, measure, improve.
-        </p>
-      </div>
-    </div>
+    <!-- Work Section -->
+    <section id="work" class="section dark-theme">
+      <div class="section-content work-content">
+        <h2 id="work-title">Loading...</h2>
+        <p id="work-description">Loading...</p>
 
-    <img src="./assets/arrow.png" src-light="./assets/arrow_light.png" src-dark="./assets/arrow_dark.png"
-      alt="Down arrow" class="icon arrow" onclick="location.href='./#experience'" />
-  </section>
+        <!-- Category Filter -->
+        <div id="category-filter" class="category-filter">
+          <button class="filter-btn all-btn active" data-filter="all">
+            All
+          </button>
+          <!-- Category buttons will be added dynamically -->
+        </div>
 
-  <!-- Experience / Skills -->
-  <section id="experience">
-    <p class="section__text__p1">Explore My</p>
-    <h1 class="title">Skills</h1>
-    <p class="skills-lead">Apple Activity ring style — quick visual of proficiency.</p>
-
-    <div class="activity-grid">
-      <!-- Mobile -->
-      <div class="activity" role="img" aria-label="React Native 86 percent">
-        <div class="activity-ring" style="--p:86; --color: var(--ring-move)"></div>
-        <div class="value">86%</div>
-        <div class="name">React Native (Expo)</div>
-      </div>
-      <div class="activity" role="img" aria-label="Kotlin 80 percent">
-        <div class="activity-ring" style="--p:80; --color: var(--ring-exercise)"></div>
-        <div class="value">80%</div>
-        <div class="name">Kotlin</div>
-      </div>
-      <div class="activity" role="img" aria-label="Swift 72 percent">
-        <div class="activity-ring" style="--p:72; --color: var(--ring-stand)"></div>
-        <div class="value">72%</div>
-        <div class="name">Swift</div>
-      </div>
-
-      <!-- Frontend -->
-      <div class="activity" role="img" aria-label="React 82 percent">
-        <div class="activity-ring" style="--p:82; --color: var(--ring-exercise)"></div>
-        <div class="value">82%</div>
-        <div class="name">React</div>
-      </div>
-      <div class="activity" role="img" aria-label="TypeScript 79 percent">
-        <div class="activity-ring" style="--p:79; --color: var(--ring-stand)"></div>
-        <div class="value">79%</div>
-        <div class="name">TypeScript / JavaScript</div>
-      </div>
-
-      <!-- Backend & APIs -->
-      <div class="activity" role="img" aria-label="Flask 74 percent">
-        <div class="activity-ring" style="--p:74; --color: var(--ring-exercise)"></div>
-        <div class="value">74%</div>
-        <div class="name">Python (Flask)</div>
-      </div>
-      <div class="activity" role="img" aria-label="REST API Design 80 percent">
-        <div class="activity-ring" style="--p:80; --color: var(--ring-move)"></div>
-        <div class="value">80%</div>
-        <div class="name">REST API Design</div>
-      </div>
-
-      <!-- Data & DevOps -->
-      <div class="activity" role="img" aria-label="SQL 76 percent">
-        <div class="activity-ring" style="--p:76; --color: var(--ring-stand)"></div>
-        <div class="value">76%</div>
-        <div class="name">SQL (Postgres/MySQL/SQLite)</div>
-      </div>
-      <div class="activity" role="img" aria-label="Git and CI/CD 82 percent">
-        <div class="activity-ring" style="--p:82; --color: var(--ring-exercise)"></div>
-        <div class="value">82%</div>
-        <div class="name">Git & CI/CD</div>
-      </div>
-    </div>
-
-    <img src="./assets/arrow.png" src-light="./assets/arrow_light.png" src-dark="./assets/arrow_dark.png"
-      alt="Down arrow" class="icon arrow" onclick="location.href='./#projects'" />
-  </section>
-
-  <!-- Projects -->
-  <section id="projects">
-    <p class="section__text__p1">Browse My Recent</p>
-    <h1 class="title">Projects</h1>
-
-    <div class="project-grid">
-      <!-- Project 1 -->
-      <article class="card">
-        <img src="./assets/project-1.png" alt="Cannabis Canada project cover" />
-        <div class="card-body">
-          <h3>Cannabis Canada</h3>
-          <p>Product discovery with clean category flows and responsive detail pages.</p>
-          <div class="tags">
-            <span class="tag">React</span>
-            <span class="tag">UI/UX</span>
-            <span class="tag">Responsive</span>
+        <!-- Projects Carousel Container -->
+        <div class="projects-carousel-container">
+          <!-- Swiper Container -->
+          <div id="projects-swiper" class="swiper projects-swiper">
+            <div class="swiper-wrapper" id="projects-track">
+              <!-- Projects will be loaded here as swiper-slide elements -->
+            </div>
           </div>
-          <div class="actions">
-            <button class="btn btn-color-2 project-btn"
-              onclick="location.href='https://github.com/Niraj058/Cannbis-Canada'">GitHub</button>
-            <button class="btn btn-color-2 project-btn" onclick="window.open('./assets/Cannabis_Canada.pdf')">Case
-              Doc</button>
+
+          <!-- Navigation arrows outside container -->
+          <div class="projects-navigation">
+            <div class="swiper-button-next projects-next"></div>
+            <div class="swiper-button-prev projects-prev"></div>
           </div>
         </div>
-      </article>
 
-      <!-- SPC Case Study (link card) -->
-      <a class="card spc-card" href="spc-streak-saver.html" aria-label="Open SPC Streak Saver case study">
-        <div class="card-body">
-          <div class="spc-card-head">
-            <div class="spc-logo">SPC</div>
-            <h3>Streak Saver — micro-feature to gamify savings</h3>
-          </div>
-          <p>React Native + Flask slice that turns “Spend. Save. Repeat.” into a measurable habit loop.</p>
-          <div class="spc-badges">
-            <span class="spc-badge">React Native</span>
-            <span class="spc-badge">Flask</span>
-            <span class="spc-badge">REST</span>
-            <span class="spc-badge">Analytics</span>
-            <span class="spc-badge">CI/CD</span>
-          </div>
-          <div style="margin-top:10px;font-weight:600;color:#9ecfff">Read the case study →</div>
+        <!-- Project Count -->
+        <div id="project-count" class="project-count">
+          <!-- Count will be updated dynamically -->
         </div>
-      </a>
+      </div>
+      <div class="three-container overlay-container"></div>
+    </section>
 
-      <!-- Project 2 -->
-      <article class="card">
-        <img src="./assets/project-2.png" alt="Learn@SLC project cover" />
-        <div class="card-body">
-          <h3>Learn@SLC</h3>
-          <p>Course catalog + schedules with a student-first information layout.</p>
-          <div class="tags">
-            <span class="tag">React</span>
-            <span class="tag">Design System</span>
-            <span class="tag">Docs</span>
-          </div>
-          <div class="actions">
-            <button class="btn btn-color-2 project-btn"
-              onclick="location.href='https://github.com/Niraj058/Learn-SLC'">GitHub</button>
-            <button class="btn btn-color-2 project-btn"
-              onclick="window.open('./assets/Learn_at_Slc.pdf')">Documentation</button>
-          </div>
-        </div>
-      </article>
+    <!-- Contact Section -->
+    <section id="contact" class="section light-theme">
+      <div class="section-content">
+        <h2 id="contact-title">Loading...</h2>
+        <p id="contact-description">Loading...</p>
 
-      <!-- Project 3 -->
-      <article class="card">
-        <img src="./assets/project-3.png" alt="Blockchain Summit project cover" />
-        <div class="card-body">
-          <h3>Blockchain Summit</h3>
-          <p>Event site concept: agenda, speakers, sponsors — optimized for mobile.</p>
-          <div class="tags">
-            <span class="tag">HTML</span>
-            <span class="tag">CSS</span>
-            <span class="tag">Accessibility</span>
-          </div>
-          <div class="actions">
-            <button class="btn btn-color-2 project-btn"
-              onclick="location.href='https://github.com/Niraj058/Blockchain_Summit'">GitHub</button>
-            <button class="btn btn-color-2 project-btn"
-              onclick="window.open('./assets/Blockchain_Summit.pdf')">Documentation</button>
+        <!-- Contact CTAs: populated from data/contact.json (callToAction.primary / secondary) -->
+        <div id="contact-ctas" class="contact-ctas" aria-hidden="false">
+          <!-- CTA buttons will be added here dynamically -->
+        </div>
+      </div>
+      <div class="three-container overlay-container"></div>
+    </section>
+    <!-- Project Form Modal (reuses the .project-form-card markup) -->
+    <div id="project-form-modal" class="form-modal" aria-hidden="true">
+      <div class="form-modal-overlay" id="form-modal-overlay"></div>
+      <div class="form-modal-container" role="dialog" aria-modal="true" aria-labelledby="form-modal-title">
+        <button class="form-modal-close" id="form-modal-close" aria-label="Close form">
+          <svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" role="img">
+            <line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            <line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </button>
+        <div class="form-modal-body" id="form-modal-body">
+          <div class="project-form-card">
+            <form id="project-form" autocomplete="off">
+              <input type="hidden" name="_wpcf7" value="15" />
+              <input type="hidden" name="_wpcf7_version" value="6.1.1" />
+              <input type="hidden" name="_wpcf7_locale" value="en_US" />
+              <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f15-p2-o1" />
+              <input type="hidden" name="_wpcf7_container_post" value="2" />
+              <input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+              <h3 class="form-title">Info</h3>
+              <div class="form-row">
+                <input type="text" id="full-name" name="full-name" placeholder="Full Name" required />
+                <input type="email" id="email" name="email" placeholder="Email" required />
+              </div>
+              <div class="form-row" style="justify-content: space-between;">
+                <div class="form-group">
+                  <h3 class="form-title">Design</h3>
+                  <div class="radio-group">
+                    <label class="custom-radio">
+                      <input type="radio" name="design" value="have" required />
+                      <span>I have a design</span>
+                    </label>
+                    <label class="custom-radio">
+                      <input type="radio" name="design" value="need" />
+                      <span>I need design</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <h3 class="form-title">CMS</h3>
+                  <div class="radio-group">
+                    <label class="custom-radio">
+                      <input type="radio" name="cms" value="have" required />
+                      <span>I have a CMS</span>
+                    </label>
+                    <label class="custom-radio">
+                      <input type="radio" name="cms" value="need" />
+                      <span>I need a CMS</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <h3 class="form-title">Preffered Front-end</h3>
+              <div class="form-row">
+                <select id="frontend" name="frontend" required>
+                  <option value="" disabled selected>
+                    Select your framework
+                  </option>
+                  <option value="choice">Developer's choice</option>
+                  <option value="astro">Astro</option>
+                  <option value="drupal">Drupal</option>
+                  <option value="framer">Framer theme</option>
+                  <option value="gatsby">Gatsby</option>
+                  <option value="nextjs">NextJS</option>
+                  <option value="react">React</option>
+                  <option value="shopify">Shopify theme & support</option>
+                  <option value="webflow">Webflow theme</option>
+                  <option value="wordpress">WordPress</option>
+                </select>
+              </div>
+
+              <h3 class="form-title">Toppings</h3>
+              <div class="form-row">
+                <label class="custom-checkbox">
+                  <input type="checkbox" name="toppings[]" value="2d" />
+                  <span>2D animations</span>
+                </label>
+                <label class="custom-checkbox">
+                  <input type="checkbox" name="toppings[]" value="3d" />
+                  <span>3D animations</span>
+                </label>
+                <label class="custom-checkbox">
+                  <input type="checkbox" name="toppings[]" value="ecommerce" />
+                  <span>Ecommerce</span>
+                </label>
+                <label class="custom-checkbox">
+                  <input type="checkbox" name="toppings[]" value="logins" />
+                  <span>Logins & profiles</span>
+                </label>
+                <label class="custom-checkbox">
+                  <input type="checkbox" name="toppings[]" value="mapping" />
+                  <span>Mapping</span>
+                </label>
+                <label class="custom-checkbox">
+                  <input type="checkbox" name="toppings[]" value="realtime" />
+                  <span>Realtime data</span>
+                </label>
+                <label class="custom-checkbox">
+                  <input type="checkbox" name="toppings[]" value="search" />
+                  <span>Site search</span>
+                </label>
+                <label class="custom-checkbox">
+                  <input type="checkbox" name="toppings[]" value="mate" />
+                  <span>Mate rates (-10%)</span>
+                </label>
+              </div>
+
+              <div class="form-row">
+                <textarea id="message" name="message" placeholder="Message" required></textarea>
+              </div>
+
+              <div class="form-row">
+                <button type="submit">Start Project</button>
+              </div>
+            </form>
           </div>
         </div>
-      </article>
+      </div>
     </div>
+  </main>
 
-    <img src="./assets/arrow.png" src-light="./assets/arrow_light.png" src-dark="./assets/arrow_dark.png"
-      alt="Down arrow" class="icon arrow" onclick="location.href='./#contact'" />
-  </section>
+  <!-- Project Modal/Slideshow -->
+  <div id="project-modal" class="project-modal">
+    <div class="project-modal-overlay"></div>
+    <div class="project-modal-content">
+      <button class="project-modal-close">&times;</button>
 
-  <!-- Contact -->
-  <section id="contact">
-    <p class="section__text__p1">Get in touch</p>
-    <h1 class="title">Contact Me</h1>
-    <div class="contact-info-upper-container">
-      <div class="contact-info-container">
-        <img src="./assets/email.png" src-light="./assets/email_light.png" src-dark="./assets/email_dark.png"
-          alt="Email icon" class="icon contact-icon email-icon" />
-        <p><a href="mailto:nirajshah@duck.com">Email Me</a></p>
-      </div>
-      <div class="contact-info-container">
-        <img src="./assets/linkedin_light.png" src-light="./assets/linkedin_light.png"
-          src-dark="./assets/linkedin_dark.png" alt="LinkedIn icon" class="icon contact-icon" />
-        <p><a href="https://www.linkedin.com/in/shahnniraj/">LinkedIn</a></p>
+      <div class="project-modal-body">
+        <!-- Left Side: Project Info -->
+        <div class="project-modal-left">
+          <div class="project-image-container">
+            <img id="project-featured-image" src="" alt="Project Image" class="project-featured-image" />
+          </div>
+
+          <div class="project-info">
+            <h3 id="project-modal-title">Project Title</h3>
+            <p class="project-category" id="project-modal-category">
+              Category
+            </p>
+
+            <div class="project-meta-grid">
+              <div class="meta-item">
+                <span class="meta-label">Client:</span>
+                <span class="meta-value" id="project-modal-client">Client Name</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Role:</span>
+                <span class="meta-value" id="project-modal-role">Role Description</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Year:</span>
+                <span class="meta-value" id="project-modal-year">2024</span>
+              </div>
+            </div>
+
+            <!-- Technologies -->
+            <div class="project-technologies-section">
+              <h4>Technologies</h4>
+              <div id="project-modal-technologies" class="tech-icons-grid">
+                <!-- Technology icons will be loaded here -->
+              </div>
+            </div>
+
+            <!-- Call to Action Buttons -->
+            <div class="project-cta-section">
+              <div id="project-modal-cta" class="project-cta-buttons">
+                <!-- CTA buttons will be loaded here -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Content -->
+        <div class="project-modal-right">
+          <div class="project-content">
+            <p id="project-modal-description">
+              Project description will be displayed here.
+            </p>
+
+            <!-- Project Images Gallery -->
+            <div class="project-images-gallery">
+              <div class="swiper project-images-swiper">
+                <div class="swiper-wrapper" id="project-images-track">
+                  <!-- Project images will be loaded here -->
+                </div>
+                <!-- Navigation arrows -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <!-- Pagination dots -->
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- Footer -->
-  <footer>
-    <nav>
-      <div class="nav-links-container">
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-        </ul>
+  <!-- Mobile Menu Sidebar -->
+  <div id="mobile-sidebar" class="mobile-sidebar">
+    <div class="mobile-sidebar-content">
+      <!-- Mobile badges section -->
+      <div class="mobile-nav-section">
+        <h4>Status & Info</h4>
+        <div class="mobile-badges">
+          <!-- Available for work badge -->
+          <div class="mobile-badge status-badge">
+            <span class="status-dot" id="mobile-status-dot"></span>
+            <span class="status-text" id="mobile-status-text">Available for work</span>
+          </div>
+
+          <!-- Location badge -->
+          <div class="mobile-badge location-badge">
+            <span class="location-text" id="mobile-location-text">Casablanca, Morocco</span>
+          </div>
+
+          <!-- Timezone and time badge -->
+          <div class="mobile-badge time-info-badge">
+            <span class="timezone-text" id="mobile-timezone-text">UTC+1</span>
+            <span class="time-separator">•</span>
+            <span class="time-text" id="mobile-time-text">--:--</span>
+          </div>
+
+          <!-- Start a project badge -->
+          <a href="#" class="mobile-badge project-badge project-toggle" id="project-cta-mobile">
+            <span class="project-text">Start a project</span>
+          </a>
+        </div>
       </div>
-    </nav>
-    <p>Copyright &#169; 2025 Niraj Shah. All Rights Reserved.</p>
+      <div class="mobile-nav-section">
+        <h4>Sections</h4>
+        <div class="mobile-nav-links">
+          <a href="#hero" class="mobile-nav-link" data-section="hero">Hero</a>
+          <a href="#about" class="mobile-nav-link" data-section="about">About</a>
+          <a href="#work" class="mobile-nav-link" data-section="work">Work</a>
+          <a href="#contact" class="mobile-nav-link" data-section="contact">Contact</a>
+        </div>
+      </div>
+
+      <div class="mobile-nav-section-socials">
+        <h4>Social</h4>
+        <div class="mobile-nav-socials">
+          <a href="https://linkedin.com/in/kitmane" target="_blank" class="mobile-social-link" title="linkedin">
+            <img src="/images/linkedin.svg" alt="linkedin" width="24" height="24" />
+          </a>
+          <a href="https://www.github.com/ismailkit" target="_blank" class="mobile-social-link" title="GitHub">
+            <img src="/images/github.svg" alt="GitHub" width="24" height="24" />
+          </a>
+          <a href="https://www.figma.com/@ismailkitmane" target="_blank" class="mobile-social-link" title="Figma">
+            <img src="/images/figma.svg" alt="Figma" width="24" height="24" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-overlay" class="mobile-overlay"></div>
+
+  <!-- Fixed Transparent Footer -->
+  <footer id="fixed-footer" class="fixed-footer">
+    <div class="footer-content">
+      <!-- Desktop Footer Content (hidden on mobile) -->
+      <div class="desktop-footer-content">
+        <!-- Left: Social Links -->
+        <div class="footer-socials">
+          <a href="https://linkedin.com/in/kitmane" target="_blank" class="footer-social-link"
+            data-label="linkedin">linkedin</a>
+          <span class="separator">/</span>
+          <a href="https://www.github.com/ismailkit" target="_blank" class="footer-social-link"
+            data-label="github">github</a>
+          <span class="separator">/</span>
+          <a href="https://www.figma.com/@ismailkitmane" target="_blank" class="footer-social-link"
+            data-label="figma">figma</a>
+        </div>
+
+        <!-- Center: Scroll Down Icon -->
+        <div class="footer-scroll">
+          <div class="scroll-mouse">
+            <div class="scroll-wheel"></div>
+          </div>
+        </div>
+
+        <!-- Right: Section Navigator -->
+        <div class="footer-navigation">
+          <a href="#hero" class="footer-nav-link active" data-section="hero">hero</a>
+          <span class="separator">/</span>
+          <a href="#about" class="footer-nav-link" data-section="about">about</a>
+          <span class="separator">/</span>
+          <a href="#work" class="footer-nav-link" data-section="work">work</a>
+          <span class="separator">/</span>
+          <a href="#contact" class="footer-nav-link" data-section="contact">contact</a>
+        </div>
+      </div>
+      <!-- End desktop footer content -->
+    </div>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- Scripts -->
+  <script src="js/libraries/three.min.js"></script>
+  <script src="js/libraries/swiper-bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <!-- Swiper JS -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
+    integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
+    data-cf-beacon='{"version":"2024.11.0","token":"0a939dd5d0c047b89fe1096cc58ca331","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
