@@ -1,0 +1,22 @@
+{
+    "title": "About",
+    "heading": "Hey, i'm kitmane",
+    "description": "Hi! I'm Ismail Kitmane, a freelance UI/UX developer and designer with over six years of experience crafting beautiful and functional digital products. I specialize in creating engaging web applications, intuitive user interfaces, and seamless user experiences that help businesses connect with their audience and drive sales.",
+    "callToAction": {
+        "text": "For work inquires send me an",
+        "linkText": "e-mail",
+        "link": "mailto:contact@kitmane.com"
+    },
+    "skills": [
+        "Product Development",
+        "Web Design",
+        "UI/UX Design",
+        "Front-end Development",
+        "Three.js & WebGL",
+        "WordPress Development",
+        "React & Node.js"
+    ],
+    "experience": "5+ years",
+    "location": "Morocco - Available for remote work",
+    "availability": "Available for projects"
+}

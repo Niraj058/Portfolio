@@ -1,0 +1,37 @@
+{
+    "site": {
+        "title": "Niraj Shah",
+        "description": "Portfolio of Niraj Shah. Software Engineer, Web Developer, and Technology Enthusiast."
+    },
+    "hero": {
+        "subtitle": "Hi, I'm Niraj Shah",
+        "title": "Software Engineer & Web Developer",
+        "alternatingTitles": [
+            "Software Engineer",
+            "Web Developer",
+            "Tech Enthusiast"
+        ],
+        "tagline": "Building impactful digital experiences."
+    },
+    "header": {
+        "logo": "Niraj",
+        "status": {
+            "text": "Available for work",
+            "available": true
+        },
+        "location": {
+            "city": "Toronto",
+            "country": "Canada",
+            "timezone": "UTC-4",
+            "timezoneId": "America/Toronto"
+        }
+    },
+    "social": {
+        "linkedin": "https://www.linkedin.com/in/shahnniraj/",
+        "github": "https://github.com/Niraj058"
+    },
+    "work": {
+        "title": "Projects",
+        "description": "A selection of my work across web, software, and technology."
+    }
+}

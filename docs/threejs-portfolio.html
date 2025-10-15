@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Interactive ThreeJS Portfolio – Project Documentation</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <style>
+        body {
+            background: #f8fafc;
+            color: #0f172a;
+            font-family: "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        .doc-container {
+            max-width: 860px;
+            margin: 96px auto;
+            padding: 56px 56px 64px;
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 32px 80px rgba(15, 23, 42, 0.12);
+        }
+
+        .doc-container h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .doc-container p.lead {
+            font-size: 1.1rem;
+            color: #475569;
+            margin-bottom: 2rem;
+        }
+
+        .doc-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 18px;
+            margin-bottom: 36px;
+        }
+
+        .doc-meta div {
+            padding: 14px 18px;
+            border-radius: 16px;
+            background: rgba(15, 23, 42, 0.05);
+        }
+
+        .doc-meta span {
+            display: block;
+            font-size: 0.8rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #64748b;
+            margin-bottom: 4px;
+        }
+
+        .doc-section {
+            margin-bottom: 32px;
+        }
+
+        .doc-section h2 {
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .doc-section ul {
+            list-style: disc;
+            padding-left: 1.25rem;
+            color: #334155;
+        }
+
+        .doc-nav {
+            max-width: 860px;
+            margin: 48px auto 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .doc-nav a {
+            font-weight: 600;
+            color: #2563eb;
+        }
+    </style>
+</head>
+<body>
+    <nav class="doc-nav">
+        <a href="../index.html#work">← Back to Projects</a>
+        <a href="https://www.kitmane.com/" target="_blank" rel="noopener">Live Portfolio ↗</a>
+    </nav>
+
+    <main class="doc-container">
+        <h1>Interactive ThreeJS Portfolio</h1>
+        <p class="lead">
+            A self-directed portfolio that blends Three.js driven motion, layered storytelling, and instant content updates to introduce my capabilities to prospective partners.
+        </p>
+
+        <div class="doc-meta">
+            <div>
+                <span>Client</span>
+                Personal Project
+            </div>
+            <div>
+                <span>Role</span>
+                Creative Developer
+            </div>
+            <div>
+                <span>Year</span>
+                2023
+            </div>
+            <div>
+                <span>Stack</span>
+                Three.js, React, GSAP, Framer Motion
+            </div>
+        </div>
+
+        <section class="doc-section">
+            <h2>Project Overview</h2>
+            <p>
+                The portfolio was designed as a living product demo. It immerses visitors in a responsive 3D environment backed by structured content, showing the kind of experience and polish I bring to client engagements.
+            </p>
+        </section>
+
+        <section class="doc-section">
+            <h2>Responsibilities</h2>
+            <ul>
+                <li>Architected a modular React codebase with a content layer that surfaces case studies and metrics dynamically.</li>
+                <li>Crafted a cinematic hero experience using Three.js particle systems, scroll-tied sequencing, and accessibility-first controls.</li>
+                <li>Engineered a resilient build pipeline with image compression, route-based code splitting, and performance monitoring.</li>
+                <li>Documented reusable animation primitives and theming tokens for future sections and microsites.</li>
+            </ul>
+        </section>
+
+        <section class="doc-section">
+            <h2>Impact</h2>
+            <ul>
+                <li>Supports rapid iteration—new projects can be added through JSON without code changes.</li>
+                <li>Drove increased inbound interest by showcasing both design sensibility and technical execution.</li>
+                <li>Serves as a reference implementation for clients exploring WebGL storytelling or high-end marketing sites.</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
