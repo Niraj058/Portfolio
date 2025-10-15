@@ -1,12 +1,12 @@
 {
     "site": {
-        "title": "Ismail Kitmane",
+        "title": "Niraj Shah",
         "description": "Freelance UI/UX Developer & Designer",
         "email": "contact@kitmane.com"
     },
     "hero": {
-        "subtitle": "Kitmane",
-        "title": "Hi! I'm Ismail Kitmane",
+        "subtitle": "Shah",
+        "title": "Hi! I'm Niraj Shah",
         "alternatingTitles": [
             "I create innovative digital experiences",
             "An affordable way to launch your product idea",
@@ -17,7 +17,7 @@
         "tagline": "A freelance UX UI designer collaborating with startups and tech companies"
     },
     "header": {
-        "logo": "Kitmane",
+        "logo": "Niraj Shah",
         "status": {
             "available": true,
             "text": "Available for work"
@@ -48,7 +48,7 @@
             },
             {
                 "id": "work",
-                "name": "Work",
+                "name": "Projects",
                 "theme": "dark",
                 "threeJsFile": "sphere-dark.js"
             },
