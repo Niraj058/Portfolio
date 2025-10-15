@@ -20,15 +20,17 @@
                 "presentation",
                 "case-study"
             ],
-            "client": "Blockchain Summit",
-            "role": "Conference Speaker & Solutions Architect",
-            "year": "2024",
-            "description": "A keynote deck outlining how enterprises can operationalise blockchain, with governance guardrails and phased roadmaps.",
+            "client": "Career-In",
+            "role": "Project Manager",
+            "year": "2021",
+            "description": "Co-led a remote team to deliver a multi-speaker blockchain summit, driving record participation through agile planning and outreach.",
             "technologies": [
-                "Ethereum",
-                "Node.js",
-                "AWS",
-                "Conference Strategy"
+                "Agile Delivery",
+                "Stakeholder Management",
+                "Remote Collaboration",
+                "Social Media Strategy",
+                "Speaker Ops",
+                "Event Analytics"
             ],
             "thumbnail": "/images/project-images/portfolio-thumb.jpg",
             "images": [
@@ -37,13 +39,15 @@
             "cta": [
                 {
                     "text": "View Resource",
-                    "link": "/assets/Blockchain_Summit.pdf"
+                    "link": "assets/Blockchain_Summit.pdf"
                 },
                 {
                     "text": "Download PDF",
-                    "link": "/assets/Blockchain_Summit.pdf"
+                    "link": "assets/Blockchain_Summit.pdf"
                 }
-            ]
+            ],
+            "fullDescription": "Led a six-person project team to bring Career-In's blockchain summit to life across 10-hour time zones. Owned social media and institutional outreach, contacting over 100 Canadian and International schools and coordinating speakers from Netflix, Diageo, and United Africa. Ran weekly agile ceremonies with the project owner, and stakeholders, mitigated speaker drop
+            -off risks, and delivered the virtual event on time, on budget, and with the summit's highest-ever attendance."
         },
         {
             "title": "Cannabis Canada Data Platform",
@@ -54,12 +58,14 @@
             "client": "Cannabis Canada",
             "role": "Product Consultant & Lead Engineer",
             "year": "2023",
-            "description": "Documenting the architecture behind a national compliance dashboard that unifies seed-to-sale telemetry for regulators.",
+            "description": "Blueprinted a national compliance dashboard that turned seed-to-sale telemetry into regulator-ready intelligence.",
             "technologies": [
                 "React",
                 "TypeScript",
                 "GraphQL",
-                "AWS"
+                "AWS",
+                "Data Governance",
+                "Tableau"
             ],
             "thumbnail": "/images/project-images/dashcam.jpg",
             "images": [
@@ -68,13 +74,14 @@
             "cta": [
                 {
                     "text": "View Resource",
-                    "link": "/assets/Cannabis_Canada.pdf"
+                    "link": "assets/Cannabis_Canada.pdf"
                 },
                 {
                     "text": "Download PDF",
-                    "link": "/assets/Cannabis_Canada.pdf"
+                    "link": "assets/Cannabis_Canada.pdf"
                 }
-            ]
+            ],
+            "fullDescription": "Partnered with Cannabis Canada to map legacy integrations, design a TypeScript/GraphQL service layer on AWS, and prototype policy dashboards. Documented data governance patterns and rollout phases so internal teams and provincial regulators shared a clear integration roadmap."
         },
         {
             "title": "Learn@SLC Automation Audit",
@@ -85,12 +92,14 @@
             "client": "Learn @ SLC",
             "role": "Automation Strategist",
             "year": "2022",
-            "description": "Assessment and roadmap for modernising digital learning workflows, removing manual touch points for student onboarding.",
+            "description": "Audited Learn@SLC's onboarding workflows and delivered an automation roadmap that removed manual bottlenecks.",
             "technologies": [
                 "Zapier",
-                "Make",
+                "Make (Integromat)",
                 "Google Workspace",
-                "API Integration"
+                "Airtable",
+                "Process Mapping",
+                "Change Management"
             ],
             "thumbnail": "/images/project-images/dreamolytic-thumb.jpg",
             "images": [
@@ -99,13 +108,14 @@
             "cta": [
                 {
                     "text": "View Resource",
-                    "link": "/assets/Learn_at_Slc.pdf"
+                    "link": "assets/Learn_at_Slc.pdf"
                 },
                 {
                     "text": "Download PDF",
-                    "link": "/assets/Learn_at_Slc.pdf"
+                    "link": "assets/Learn_at_Slc.pdf"
                 }
-            ]
+            ],
+            "fullDescription": "Mapped every touch point in the student journey, quantified failure modes, and prioritised fixes using RICE scoring. Prototyped Zapier and Make scenarios that synchronised Google Workspace, CRM, and payment data, cutting average onboarding time by 40%."
         }
     ]
 }
