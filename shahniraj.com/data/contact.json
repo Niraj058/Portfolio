@@ -8,7 +8,9 @@
         },
         "secondary": {
             "text": "Connect on LinkedIn",
-            "link": "https://www.linkedin.com/in/shahnniraj/"
+            "link": "https://www.linkedin.com/in/shahnniraj/",
+            "color": "#0a66c2",
+            "textColor": "#ffffff"
         }
     }
 }

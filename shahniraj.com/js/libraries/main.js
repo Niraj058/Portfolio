@@ -288,6 +288,37 @@ function updateContent() {
           // Open external http(s) links in new tab
           a.target = href && href.startsWith("http") ? "_blank" : "_self";
           a.setAttribute("role", "button");
+          if (btnData.color) {
+            const baseBackground = btnData.color;
+            const baseBorder = btnData.borderColor || baseBackground;
+            const baseText = btnData.textColor || "#ffffff";
+            a.style.backgroundColor = baseBackground;
+            a.style.borderColor = baseBorder;
+            a.style.color = baseText;
+            if (
+              btnData.hoverColor ||
+              btnData.hoverBorderColor ||
+              btnData.hoverTextColor
+            ) {
+              const hoverBackground = btnData.hoverColor || baseBackground;
+              const hoverBorder = btnData.hoverBorderColor || hoverBackground;
+              const hoverText = btnData.hoverTextColor || baseText;
+              const applyHoverStyles = () => {
+                a.style.backgroundColor = hoverBackground;
+                a.style.borderColor = hoverBorder;
+                a.style.color = hoverText;
+              };
+              const resetStyles = () => {
+                a.style.backgroundColor = baseBackground;
+                a.style.borderColor = baseBorder;
+                a.style.color = baseText;
+              };
+              a.addEventListener("mouseenter", applyHoverStyles);
+              a.addEventListener("focus", applyHoverStyles);
+              a.addEventListener("mouseleave", resetStyles);
+              a.addEventListener("blur", resetStyles);
+            }
+          }
 
           // Only make the CTA open the modal when it's a placeholder or '#'
           // Mailto and http links will behave normally and not open the modal
