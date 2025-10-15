@@ -2,10 +2,10 @@
     "site": {
         "title": "Niraj Shah",
         "description": "Freelance UI/UX Developer & Designer",
-        "email": "contact@kitmane.com"
+        "email": "shahnniraj.2025@gmail.com"
     },
     "hero": {
-        "subtitle": "Shah",
+        "subtitle": "Niraj",
         "title": "Hi! I'm Niraj Shah",
         "alternatingTitles": [
             "I create innovative digital experiences",
@@ -61,8 +61,7 @@
         ]
     },
     "social": {
-        "linkedin": "https://linkedin.com/in/kitmane",
-        "github": "https://www.github.com/ismailkit",
-        "figma": "https://www.figma.com/@ismailkitmane"
+        "linkedin": "https://www.linkedin.com/in/shahnniraj/",
+        "github": "https://github.com/Niraj058"
     }
 }

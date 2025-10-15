@@ -112,8 +112,8 @@
                 "images/projects/portfolio-2.jpg",
                 "images/projects/portfolio.webm"
             ],
-            "link": "https://www.kitmane.com/",
-            "github": "https://github.com/ismailkit/portfolio",
+            "link": "https://www.shahniraj.com/",
+            "github": "https://github.com/Niraj058",
             "technologies": [
                 {
                     "name": "Three.js",
@@ -373,42 +373,42 @@
             "featured": true,
             "year": "2023"
         }
-],
-"categories": [
-    {
-        "id": "web-dev",
-        "name": "Web Development",
-        "color": "#000000"
-    },
-    {
-        "id": "ui-ux",
-        "name": "UI/UX Design",
-        "color": "#333333"
-    },
-    {
-        "id": "automation",
-        "name": "Automation",
-        "color": "#666666"
-    },
-    {
-        "id": "cms",
-        "name": "CMS",
-        "color": "#999999"
-    },
-    {
-        "id": "animation",
-        "name": "Animation",
-        "color": "#cccccc"
-    },
-    {
-        "id": "app",
-        "name": "Application",
-        "color": "#000000"
-    },
-    {
-        "id": "e-commerce",
-        "name": "E-commerce",
-        "color": "#333333"
-    }
-]
+    ],
+    "categories": [
+        {
+            "id": "web-dev",
+            "name": "Web Development",
+            "color": "#000000"
+        },
+        {
+            "id": "ui-ux",
+            "name": "UI/UX Design",
+            "color": "#333333"
+        },
+        {
+            "id": "automation",
+            "name": "Automation",
+            "color": "#666666"
+        },
+        {
+            "id": "cms",
+            "name": "CMS",
+            "color": "#999999"
+        },
+        {
+            "id": "animation",
+            "name": "Animation",
+            "color": "#cccccc"
+        },
+        {
+            "id": "app",
+            "name": "Application",
+            "color": "#000000"
+        },
+        {
+            "id": "e-commerce",
+            "name": "E-commerce",
+            "color": "#333333"
+        }
+    ]
 }
