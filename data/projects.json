@@ -15,26 +15,60 @@
     ],
     "projects": [
         {
-            "title": "Blockchain Summit Playbook",
+            "title": "Quick Quiz Dashboard",
+            "categories": [
+                "case-study",
+                "report"
+            ],
+            "client": "Brain It On!",
+            "role": "Full Stack Engineer",
+            "year": "2020",
+            "description": "Blueprinted a national compliance dashboard that turned seed-to-sale telemetry into regulator-ready intelligence.",
+            "technologies": [
+                "React",
+                "TypeScript",
+                "GraphQL",
+                "AWS",
+                "Data Governance",
+                "Tableau"
+            ],
+            "thumbnail": "assets/Brain_it_On.png",
+            "images": [
+                "assets/brainItOn!.png"
+            ],
+            "cta": [
+                {
+                    "text": "View Resource",
+                    "link": "assets/Cannabis_Canada.pdf"
+                },
+                {
+                    "text": "Download PDF",
+                    "link": "assets/Cannabis_Canada.pdf"
+                }
+            ],
+            "fullDescription": "Partnered with Cannabis Canada to map legacy integrations, design a TypeScript/GraphQL service layer on AWS, and prototype policy dashboards. Documented data governance patterns and rollout phases so internal teams and provincial regulators shared a clear integration roadmap."
+        },
+        {
+            "title": "Blockchain Summit",
             "categories": [
                 "presentation",
                 "case-study"
             ],
-            "client": "Career-In",
-            "role": "Project Manager",
-            "year": "2021",
-            "description": "Co-led a remote team to deliver a multi-speaker blockchain summit, driving record participation through agile planning and outreach.",
+            "client": "CareerIn • Vancouver, CA (Remote)",
+            "role": "Project Management Intern",
+            "year": "July 2021",
+            "description": "Supported summit delivery with agile resource planning, stakeholder communication, and end-to-end coordination for a multi-speaker virtual event.",
             "technologies": [
-                "Agile Delivery",
-                "Stakeholder Management",
+                "Agile Planning",
+                "Resource Allocation",
+                "Stakeholder Communication",
+                "Event Operations",
                 "Remote Collaboration",
-                "Social Media Strategy",
-                "Speaker Ops",
-                "Event Analytics"
+                "Summit Analytics"
             ],
-            "thumbnail": "/images/project-images/portfolio-thumb.jpg",
+            "thumbnail": "assets/careerintech_cover.jpeg",
             "images": [
-                "/images/project-images/portfolio-thumb.jpg"
+                "assets/careerintech_cover.jpeg"
             ],
             "cta": [
                 {
@@ -46,8 +80,7 @@
                     "link": "assets/Blockchain_Summit.pdf"
                 }
             ],
-            "fullDescription": "Led a six-person project team to bring Career-In's blockchain summit to life across 10-hour time zones. Owned social media and institutional outreach, contacting over 100 Canadian and International schools and coordinating speakers from Netflix, Diageo, and United Africa. Ran weekly agile ceremonies with the project owner, and stakeholders, mitigated speaker drop
-            -off risks, and delivered the virtual event on time, on budget, and with the summit's highest-ever attendance."
+            "fullDescription": "Worked as a Project Management Intern for CareerIn's blockchain summit, coordinating resources across time zones, synchronising speaker logistics, and keeping stakeholders aligned from kickoff through the live event. Conducted weekly agile ceremonies, tracked risks, and ensured deliverables stayed on schedule while supporting marketing outreach that drove record attendance."
         },
         {
             "title": "Cannabis Canada Data Platform",
